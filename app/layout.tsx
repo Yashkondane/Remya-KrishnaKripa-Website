@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   generator: "v0.dev",
 }
 
+import Footer from "@/components/footer"
+import Navbar from "@/components/navbar"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -21,7 +24,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className={inter.className}>
         <ScrollToTop />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )
