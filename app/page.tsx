@@ -59,7 +59,7 @@ export default function HomePage() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-20 h-20 flex-shrink-0">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2816%29-Bq0ym2jz0FUwgvr4Y9rgEyxlX6Kkrz.png"
+                src="/images/logo-new.png"
                 alt="AkashicReading Logo"
                 width={80}
                 height={80}

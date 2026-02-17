@@ -47,7 +47,7 @@ export default function SimplePreloader() {
           <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
             <div className="w-56 h-56 relative">
               <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2816%29-Bq0ym2jz0FUwgvr4Y9rgEyxlX6Kkrz.png"
+                src="/images/logo-new.png"
                 alt="AkashicReading Logo"
                 className="w-full h-full object-contain drop-shadow-2xl"
               />

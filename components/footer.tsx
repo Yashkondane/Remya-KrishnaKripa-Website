@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-2">
               <div className="w-24 h-24 flex-shrink-0">
                 <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2816%29-Bq0ym2jz0FUwgvr4Y9rgEyxlX6Kkrz.png"
+                  src="/images/logo-new.png"
                   alt="AkashicReading Logo"
                   className="w-full h-full object-contain"
                 />
