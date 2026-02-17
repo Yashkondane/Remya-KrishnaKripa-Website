@@ -1,0 +1,421 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
+import { Libre_Baskerville } from "next/font/google"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Phone, Mail, MessageCircle, MapPin, Clock, Star, CheckCircle } from "lucide-react"
+import Link from "next/link"
+import Footer from "../../components/footer"
+import SimplePreloader from "../../components/simple-preloader"
+import ScrollReveal from "../../components/scroll-reveal"
+
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+})
+
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setError("")
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+      } else {
+        setError(result.error || "Failed to send message")
+      }
+    } catch (error) {
+      setError("Network error. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  return (
+    <>
+      <SimplePreloader />
+      <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
+        {/* Navigation */}
+        <nav className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 bg-elegant-blue/10 backdrop-blur-sm">
+          <Link href="/" className="text-xl md:text-2xl text-accent-gold">
+            AkashicReading.
+          </Link>
+
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href="/about" className="hover:text-accent-gold transition-colors">
+              About
+            </Link>
+            <Link href="/services" className="hover:text-accent-gold transition-colors">
+              Services
+            </Link>
+            <Link href="/my-book" className="hover:text-accent-gold transition-colors">
+              My Book
+            </Link>
+            <Link href="/journal" className="hover:text-accent-gold transition-colors">
+              Journal
+            </Link>
+            <Link href="/contact" className="text-accent-gold font-semibold transition-colors">
+              Contact
+            </Link>
+          </div>
+
+          <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-6 py-2 rounded-lg shadow-md transition-all duration-200">
+            Book Now
+          </Button>
+        </nav>
+
+        {/* Header Section */}
+        <ScrollReveal animation="fade">
+          <section className="px-6 md:px-12 py-16 md:py-24">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-sm md:text-base text-accent-gold uppercase tracking-wider font-semibold mb-6 animate-fadeInUp">
+                Get In Touch
+              </p>
+
+              <h1
+                className="text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 text-elegant-blue animate-fadeInUp"
+                style={{ animationDelay: "0.2s" }}
+              >
+                Contact Us
+              </h1>
+
+              <p
+                className="text-lg md:text-xl leading-relaxed text-elegant-blue/80 max-w-2xl mx-auto animate-fadeInUp"
+                style={{ animationDelay: "0.4s" }}
+              >
+                Ready to begin your spiritual journey? Reach out to schedule your Akashic Records reading or ask any
+                questions about our services.
+              </p>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Contact Content */}
+        <ScrollReveal animation="slide-up" delay={200}>
+          <section className="px-6 md:px-12 py-16 md:py-24">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                {/* Left Column - Contact Form */}
+                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-accent-gold/20 animate-slideInLeft">
+                  <h2 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8">Send us a Message</h2>
+
+                  {isSubmitted ? (
+                    <div className="text-center py-8">
+                      <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-green-600 mb-2">Message Sent Successfully!</h3>
+                      <p className="text-elegant-blue/80 mb-6">
+                        Thank you for reaching out. We'll get back to you within 24 hours.
+                      </p>
+                      <Button
+                        onClick={() => setIsSubmitted(false)}
+                        className="bg-accent-gold text-elegant-blue hover:bg-accent-gold/90"
+                      >
+                        Send Another Message
+                      </Button>
+                    </div>
+                  ) : (
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      {error && (
+                        <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-3">
+                          <p className="text-red-600 text-sm">{error}</p>
+                        </div>
+                      )}
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                          <label htmlFor="firstName" className="block text-sm font-medium text-elegant-blue/80 mb-2">
+                            First Name *
+                          </label>
+                          <Input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleInputChange}
+                            required
+                            className="bg-white/60 border-accent-gold/20 text-elegant-blue placeholder:text-elegant-blue/50 focus:border-accent-gold focus:ring-accent-gold"
+                            placeholder="Enter your first name"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="lastName" className="block text-sm font-medium text-elegant-blue/80 mb-2">
+                            Last Name *
+                          </label>
+                          <Input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleInputChange}
+                            required
+                            className="bg-white/60 border-accent-gold/20 text-elegant-blue placeholder:text-elegant-blue/50 focus:border-accent-gold focus:ring-accent-gold"
+                            placeholder="Enter your last name"
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-elegant-blue/80 mb-2">
+                          Email Address *
+                        </label>
+                        <Input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="bg-white/60 border-accent-gold/20 text-elegant-blue placeholder:text-elegant-blue/50 focus:border-accent-gold focus:ring-accent-gold"
+                          placeholder="Enter your email address"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="subject" className="block text-sm font-medium text-elegant-blue/80 mb-2">
+                          Subject *
+                        </label>
+                        <Input
+                          type="text"
+                          id="subject"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleInputChange}
+                          required
+                          className="bg-white/60 border-accent-gold/20 text-elegant-blue placeholder:text-elegant-blue/50 focus:border-accent-gold focus:ring-accent-gold"
+                          placeholder="What's this about?"
+                        />
+                      </div>
+
+                      <div>
+                        <label htmlFor="message" className="block text-sm font-medium text-elegant-blue/80 mb-2">
+                          Message *
+                        </label>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          required
+                          rows={6}
+                          className="bg-white/60 border-accent-gold/20 text-elegant-blue placeholder:text-elegant-blue/50 focus:border-accent-gold focus:ring-accent-gold resize-none"
+                          placeholder="Tell us about your spiritual journey and what you're seeking guidance on..."
+                        />
+                      </div>
+
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full bg-accent-gold text-elegant-blue hover:bg-accent-gold/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 disabled:opacity-50"
+                      >
+                        {isSubmitting ? "Sending..." : "Send Message"}
+                      </Button>
+                    </form>
+                  )}
+                </div>
+
+                {/* Right Column - Contact Information */}
+                <div className="space-y-8 animate-slideInRight">
+                  {/* Contact Details */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-accent-gold/20">
+                    <h2 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8">Get in Touch</h2>
+
+                    <div className="space-y-6">
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-accent-gold/10 rounded-lg">
+                          <Mail className="w-6 h-6 text-accent-gold" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-elegant-blue mb-1">Email</h3>
+                          <p className="text-elegant-blue/80">support@remyakrishnakripa.com</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-accent-gold/10 rounded-lg">
+                          <Phone className="w-6 h-6 text-accent-gold" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-elegant-blue mb-1">Phone</h3>
+                          <p className="text-elegant-blue/80">+91 8547009801</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-accent-gold/10 rounded-lg">
+                          <Clock className="w-6 h-6 text-accent-gold" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-elegant-blue mb-1">Response Time</h3>
+                          <p className="text-elegant-blue/80">Within 24 hours</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-4">
+                        <div className="p-3 bg-accent-gold/10 rounded-lg">
+                          <MapPin className="w-6 h-6 text-accent-gold" />
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-semibold text-elegant-blue mb-1">Sessions</h3>
+                          <p className="text-elegant-blue/80">Online & In-Person Available</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp Button */}
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-accent-gold/20">
+                    <h3 className="text-xl font-bold text-accent-gold mb-4">Quick Connect</h3>
+                    <p className="text-elegant-blue/80 mb-6">
+                      For immediate assistance or to schedule a session, reach out via WhatsApp.
+                    </p>
+                    <a
+                      href="https://wa.me/918547009801?text=Hello!%20I'm%20interested%20in%20learning%20more%20about%20your%20spiritual%20guidance%20and%20Akashic%20Records%20readings."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                      <span>Message on WhatsApp</span>
+                    </a>
+                  </div>
+
+                  {/* Testimonial */}
+                  <div className="bg-elegant-blue/10 backdrop-blur-sm rounded-2xl p-8 border border-accent-gold/20">
+                    <div className="flex items-center space-x-2 mb-4">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-accent-gold fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-elegant-blue/90 italic mb-4">
+                      "Remya's guidance through the Akashic Records was transformational. Her compassionate approach and
+                      deep wisdom helped me understand my soul's purpose."
+                    </p>
+                    <p className="text-accent-gold font-semibold">- Sarah M.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* FAQ Section */}
+        <ScrollReveal animation="fade" delay={300}>
+          <section className="bg-elegant-blue/5 backdrop-blur-sm px-6 md:px-12 py-16 md:py-24">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-12 text-center animate-fadeInUp">
+                Frequently Asked Questions
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div className="animate-fadeInUp" style={{ animationDelay: "0.2s" }}>
+                    <h3 className="text-lg font-semibold text-elegant-blue mb-2">How do I book a session?</h3>
+                    <p className="text-elegant-blue/80">
+                      You can book through our contact form, WhatsApp, or email. We'll respond within 24 hours to
+                      schedule your session.
+                    </p>
+                  </div>
+
+                  <div className="animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
+                    <h3 className="text-lg font-semibold text-elegant-blue mb-2">Are sessions available online?</h3>
+                    <p className="text-elegant-blue/80">
+                      Yes! We offer both online and in-person sessions. Online sessions are just as effective as
+                      in-person readings.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="animate-fadeInUp" style={{ animationDelay: "0.6s" }}>
+                    <h3 className="text-lg font-semibold text-elegant-blue mb-2">How long is a typical session?</h3>
+                    <p className="text-elegant-blue/80">
+                      Akashic Records readings typically last 60-90 minutes, allowing time for deep exploration and
+                      guidance.
+                    </p>
+                  </div>
+
+                  <div className="animate-fadeInUp" style={{ animationDelay: "0.8s" }}>
+                    <h3 className="text-lg font-semibold text-elegant-blue mb-2">What should I prepare?</h3>
+                    <p className="text-elegant-blue/80">
+                      Come with an open heart and 3-5 questions you'd like guidance on. We'll handle the rest.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Mobile Navigation Menu */}
+        <div className="md:hidden fixed bottom-6 left-6 right-6 z-[1000]">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-accent-gold/20">
+            <div className="flex justify-around">
+              <Link href="/about" className="text-sm text-elegant-blue hover:text-accent-gold transition-colors">
+                About
+              </Link>
+              <Link href="/services" className="text-sm text-elegant-blue hover:text-accent-gold transition-colors">
+                Services
+              </Link>
+              <Link href="/my-book" className="text-sm text-elegant-blue hover:text-accent-gold transition-colors">
+                Book
+              </Link>
+              <Link href="/journal" className="text-sm text-elegant-blue hover:text-accent-gold transition-colors">
+                Journal
+              </Link>
+              <Link href="/contact" className="text-sm text-accent-gold font-semibold transition-colors">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}

@@ -1,101 +1,413 @@
-import Image from "next/image";
+import { Libre_Baskerville } from "next/font/google"
+import { ChevronDown } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import Link from "next/link"
+import TestimonialSlider from "../components/testimonial-slider"
+import FAQAccordion from "../components/faq-accordion"
+import BlogSection from "../components/blog-section"
+import Footer from "../components/footer"
+import SimplePreloader from "../components/simple-preloader"
+import WhatsAppButton from "../components/whatsapp-button"
+import ScrollReveal from "../components/scroll-reveal"
 
-export default function Home() {
+const libreBaskerville = Libre_Baskerville({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+})
+
+const services = [
+  {
+    id: "01",
+    title: "Akashic Record Reading",
+    description:
+      "Access your soul's eternal records to understand your life purpose, past experiences, and spiritual contracts.",
+    link: "/akashic-record-reading",
+  },
+  {
+    id: "02",
+    title: "Confident Communication",
+    description:
+      "Break free from communication blocks rooted in inner child wounds. Speak your truth with confidence and authenticity.",
+    link: "/confident-communication",
+  },
+  {
+    id: "03",
+    title: "Career Accelerator",
+    description:
+      "Transform your career through soul-aligned coaching. Address inner child patterns that block success and step into leadership.",
+    link: "/career-accelerator",
+  },
+  {
+    id: "04",
+    title: "Inner Child Healing",
+    description:
+      "Reconnect with your wounded inner child to heal childhood trauma, break emotional patterns, and reclaim your authentic self.",
+    link: "/inner-child-healing",
+  },
+]
+
+export default function HomePage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <SimplePreloader />
+      <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
+        {/* Navigation */}
+        <nav className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 bg-white/60 backdrop-blur-sm animate-fadeInDown border-b border-elegant-blue/10">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-20 h-20 flex-shrink-0">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2816%29-Bq0ym2jz0FUwgvr4Y9rgEyxlX6Kkrz.png"
+                alt="AkashicReading Logo"
+                width={80}
+                height={80}
+                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <span className="text-xl md:text-2xl text-elegant-blue font-bold group-hover:text-accent-gold transition-colors duration-300">
+              AkashicReading.
+            </span>
+          </Link>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link
+              href="/about"
+              className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105 animate-fadeInDown stagger-1"
+            >
+              About
+            </Link>
+            <Link
+              href="/services"
+              className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105 animate-fadeInDown stagger-2"
+            >
+              Services
+            </Link>
+            <Link
+              href="/my-book"
+              className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105 animate-fadeInDown stagger-3"
+            >
+              My Book
+            </Link>
+            <Link
+              href="/journal"
+              className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105 animate-fadeInDown stagger-4"
+            >
+              Journal
+            </Link>
+            <Link
+              href="/contact"
+              className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105 animate-fadeInDown stagger-5"
+            >
+              Contact
+            </Link>
+          </div>
+
+          <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-6 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 btn-hover-effect animate-fadeInDown stagger-6">
+            Book Now
+          </Button>
+        </nav>
+
+        {/* Hero Section */}
+        <main className="px-6 md:px-12 py-8 md:py-16">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left Column - Image */}
+              <div className="space-y-6 order-1 lg:order-1 animate-scaleIn stagger-2">
+                <div className="relative hover-lift max-w-md mx-auto rounded-full">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Feb%2017%2C%202026%2C%2008_2-wEQmJL9GPOj6n1YHtJBguMITPiMO5N.png"
+                    alt="Remya - Spiritual Guide"
+                    width={600}
+                    height={600}
+                    className="w-full aspect-square rounded-full shadow-2xl object-cover border-4 border-accent-gold/40 transition-all duration-500 hover:border-accent-gold/80"
+                    priority
+                  />
+                </div>
+
+                <div className="flex flex-col space-y-3 max-w-md mx-auto animate-fadeInUp stagger-4">
+                  <div className="h-1 bg-accent-gold rounded-full animate-slideInLeft stagger-1"></div>
+                  <div className="h-1 bg-accent-gold rounded-full w-3/4 animate-slideInLeft stagger-2"></div>
+                  <div className="h-1 bg-accent-gold rounded-full w-1/2 animate-slideInLeft stagger-3"></div>
+                </div>
+              </div>
+
+              {/* Right Column - Text */}
+              <div className="space-y-8 order-2 lg:order-2">
+                <div className="space-y-6">
+                  <p className="text-lg md:text-xl text-accent-gold animate-fadeInUp stagger-1">Hello, I'm Remya</p>
+
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-elegant-blue animate-fadeInUp stagger-2">
+                    Who is <span className="text-accent-gold animate-float">Remya Krishnakripa</span> and How Can She
+                    Unlock Your Highest Potential?
+                  </h1>
+                </div>
+
+                <Link
+                  href="#about"
+                  className="flex items-center space-x-3 pt-8 hover:text-accent-gold transition-all duration-300 animate-fadeInUp stagger-3 hover:scale-105"
+                >
+                  <span className="text-lg text-elegant-blue/70">Know More</span>
+                  <ChevronDown className="w-5 h-5 animate-bounce text-accent-gold" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </main>
+
+        {/* Services Section */}
+        <ScrollReveal animation="fade">
+          <section className="bg-black px-6 md:px-12 py-16 md:py-24 text-white">
+            <div className="max-w-7xl mx-auto">
+              <ScrollReveal animation="fade" delay={1}>
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-accent-gold text-glow">
+                    My Services
+                  </h2>
+                </div>
+              </ScrollReveal>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {services.map((service, index) => (
+                  <ScrollReveal key={service.id} animation="scale" delay={index + 1}>
+                    <Link href={service.link} className="block">
+                      <div className="bg-elegant-blue/20 p-8 rounded-xl border border-accent-gold/30 hover:bg-elegant-blue/70 hover:scale-[1.02] transition-all duration-500 group cursor-pointer h-full hover:shadow-2xl hover:shadow-elegant-blue/30">
+                        <div className="space-y-4">
+                          <span className="text-3xl font-bold text-accent-gold group-hover:scale-110 transition-transform duration-300">
+                            {service.id}.
+                          </span>
+                          <div>
+                            <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-accent-gold transition-colors duration-300">
+                              {service.title}
+                            </h3>
+                            <p className="text-base leading-relaxed text-white/80 group-hover:text-white transition-colors duration-300">
+                              {service.description}
+                            </p>
+                          </div>
+                          <div className="flex justify-end">
+                            <div className="text-accent-gold group-hover:translate-x-2 transition-transform duration-300">
+                              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </ScrollReveal>
+                ))}
+              </div>
+
+              <ScrollReveal animation="fade" delay={5}>
+                <div className="text-center mt-12">
+                  <Link href="/services">
+                    <Button className="bg-accent-gold text-elegant-blue hover:bg-accent-gold/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 btn-hover-effect">
+                      View All Services
+                    </Button>
+                  </Link>
+                </div>
+              </ScrollReveal>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* About Section */}
+        <ScrollReveal animation="fade">
+          <section id="about" className="px-6 md:px-12 py-16 md:py-24 bg-white/50 backdrop-blur-sm">
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                {/* Left Column */}
+                <ScrollReveal animation="slide-left">
+                  <div className="space-y-8">
+                    <div className="space-y-6">
+                      <p className="text-sm md:text-base text-accent-gold uppercase tracking-wider font-semibold animate-fadeInUp stagger-1">
+                        About
+                      </p>
+
+                      <div className="relative">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight relative z-20 text-elegant-blue animate-fadeInUp stagger-2">
+                          Connecting souls to their divine wisdom through sacred guidance
+                        </h2>
+                      </div>
+                    </div>
+
+                    <div className="space-y-6 relative z-20">
+                      <Link href="/about">
+                        <button className="border-2 border-elegant-blue bg-transparent text-elegant-blue px-8 py-3 rounded-lg hover:bg-elegant-blue hover:text-warm-beige transition-all duration-300 hover:scale-105 btn-hover-effect animate-fadeInUp stagger-3">
+                          More About Me
+                        </button>
+                      </Link>
+
+                      {/* Social Icons */}
+                      <div className="flex space-x-6 animate-fadeInUp stagger-4">
+                        <a
+                          href="#"
+                          className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-110 animate-float stagger-1"
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-110 animate-float stagger-2"
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-110 animate-float stagger-3"
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z" />
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-110 animate-float stagger-4"
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.017 0 0 5.374 0 12 0zm5.568 8.16c-.169 1.858-.896 3.433-2.173 4.71C13.938 14.146 12.4 14.8 10.76 14.8c-.779 0-1.5-.122-2.14-.366-.18-.07-.335-.15-.465-.24-.04-.026-.073-.053-.1-.08-.053-.054-.08-.12-.08-.194 0-.073.027-.14.08-.194.027-.027.06-.054.1-.08.13-.09.285-.17.465-.24.64-.244 1.361-.366 2.14-.366 1.64 0 3.178-.654 4.635-1.93 1.277-1.277 2.004-2.852 2.173-4.71.013-.14-.02.28-.02.42 0 .14.007.28.02.42z" />
+                          </svg>
+                        </a>
+                        <a
+                          href="#"
+                          className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-110 animate-float stagger-4"
+                        >
+                          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.374 0 0 5.373 0 12s5.374 12 12 12 12-5.373 12-12S18.626 0 12 0zm5.568 8.16c-.169 1.858-.896 3.433-2.173 4.71C13.938 14.146 12.4 14.8 10.76 14.8c-.779 0-1.5-.122-2.14-.366-.18-.07-.335-.15-.465-.24-.04-.026-.073-.053-.1-.08-.053-.054-.08-.12-.08-.194 0-.073.027-.14.08-.194.027-.027.06-.054.1-.08.13-.09.285-.17.465-.24.64-.244 1.361-.366 2.14-.366 1.64 0 3.178-.654 4.635-1.93 1.277-1.277 2.004-2.852 2.173-4.71.013-.14-.02.28-.02.42 0 .14.007.28.02.42z" />
+                          </svg>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollReveal>
+
+                {/* Right Column */}
+                <ScrollReveal animation="slide-right">
+                  <div className="space-y-6">
+                    <p className="text-lg leading-relaxed text-elegant-blue/80 animate-fadeInUp stagger-1">
+                      For over a decade, I have been guiding souls on their journey of self-discovery and healing
+                      through the ancient wisdom of Akashic Records. My path began with my own spiritual awakening,
+                      where I discovered the profound connection between our earthly experiences and our soul's eternal
+                      journey.
+                    </p>
+
+                    <p className="text-lg leading-relaxed text-elegant-blue/80 animate-fadeInUp stagger-2">
+                      Through deep meditation, intuitive guidance, and sacred practices, I help individuals access their
+                      soul's blueprint and uncover the truth that lies within. Each session is a sacred space where
+                      healing, clarity, and transformation naturally unfold, empowering you to step into your highest
+                      potential.
+                    </p>
+                  </div>
+                </ScrollReveal>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Testimonials Section */}
+        <ScrollReveal animation="scale">
+          <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
+            <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-sm rounded-2xl p-8 animate-scaleIn border border-elegant-blue/10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-elegant-blue">
+                  Our Clients Say
+                </h2>
+              </div>
+
+              <TestimonialSlider />
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* CTA Section */}
+        <ScrollReveal animation="fade">
+          <section className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24">
+            <div className="max-w-4xl mx-auto text-center animate-fadeInUp">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-white mb-6">
+                Begin Your Journey Within — With Me as Your Guide
+              </h2>
+
+              <p className="text-lg md:text-xl leading-relaxed text-white/90 mb-8 max-w-2xl mx-auto">
+                Discover the guidance and clarity your soul is seeking through a sacred Akashic connection. Each session
+                is a step toward healing, understanding, and inner alignment.
+              </p>
+
+              <Button className="bg-accent-gold text-elegant-blue hover:bg-accent-gold/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 btn-hover-effect">
+                Book Now
+              </Button>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* FAQ Section */}
+        <ScrollReveal animation="scale">
+          <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
+            <div className="max-w-4xl mx-auto bg-white/70 backdrop-blur-sm rounded-2xl p-8 animate-scaleIn border border-elegant-blue/10">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-elegant-blue">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+
+              <FAQAccordion />
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Blog Section */}
+        <ScrollReveal animation="fade">
+          <BlogSection />
+        </ScrollReveal>
+
+        {/* WhatsApp Button */}
+        <WhatsAppButton />
+
+        {/* Footer */}
+        <Footer />
+
+        {/* Mobile Navigation Menu */}
+        <div className="md:hidden fixed bottom-6 left-6 right-6 z-[1000]">
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-elegant-blue/20 animate-slideInUp">
+            <div className="flex justify-around">
+              <Link
+                href="/about"
+                className="text-sm text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105"
+              >
+                About
+              </Link>
+              <Link
+                href="/services"
+                className="text-sm text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105"
+              >
+                Services
+              </Link>
+              <Link
+                href="/my-book"
+                className="text-sm text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105"
+              >
+                Book
+              </Link>
+              <Link
+                href="/journal"
+                className="text-sm text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105"
+              >
+                Journal
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105"
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      </div>
+    </>
+  )
 }

@@ -1,0 +1,154 @@
+"use client"
+
+import { useState } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+
+const testimonials = [
+  {
+    id: 1,
+    name: "ARYA",
+    role: "Software Engineer",
+    text: "The coach was pleasant, calm, and positive, giving me the space to discuss my challenges openly. She guided me to clear my confusions, find the right steps for career preparation, and discover the most fitting path using the strategies we discussed.",
+    image: "/images/arya.jpeg",
+  },
+  {
+    id: 2,
+    name: "ANAKHA",
+    role: "Associate Engineer",
+    text: "Attending 'Flourish Your Communication' with Remya was transformative. She helped me overcome self-doubt, improve my communication through practical tools, and understand myself more clearly. It was truly an enriching experience.",
+    image: "/images/anakha.jpg",
+  },
+  {
+    id: 3,
+    name: "KRUPA",
+    role: "Senior Test Lead",
+    text: "This interaction was refreshing and uplifting, helping me realize my inner strength and discipline. Remya's patience, strong communication, and positive approach brought excellent results, and I highly recommend her coaching.",
+    image: "/images/krupa.jpg",
+  },
+  {
+    id: 4,
+    name: "RAHUL",
+    role: "Product Manager",
+    text: "Remya created a safe space to share my challenges and guided me with practical, insightful advice. I left each session more focused, confident, and clear on the steps I needed to take in my career.",
+    image: "/images/rahul.jpg",
+  },
+  {
+    id: 5,
+    name: "PRIYA",
+    role: "Data Analyst",
+    text: "The sessions gave me a fresh perspective, helping me identify strengths, refine goals, and take immediate action. Remya's empathetic yet structured approach boosted my confidence and transformed my professional outlook.",
+    image: "/images/priya.jpg",
+  },
+  {
+    id: 6,
+    name: "SURESH",
+    role: "Senior Software Developer",
+    text: "Before these sessions, I doubted my next move, but Remya's questions and guidance helped me see new opportunities. I now make decisions with clarity and purpose thanks to her patient support.",
+    image: "/images/suresh.jpg",
+  },
+]
+
+export default function TestimonialSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
+
+  const nextTestimonial = () => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1))
+      setIsTransitioning(false)
+    }, 150)
+  }
+
+  const prevTestimonial = () => {
+    setIsTransitioning(true)
+    setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1))
+      setIsTransitioning(false)
+    }, 150)
+  }
+
+  const goToTestimonial = (index: number) => {
+    if (index !== currentIndex) {
+      setIsTransitioning(true)
+      setTimeout(() => {
+        setCurrentIndex(index)
+        setIsTransitioning(false)
+      }, 150)
+    }
+  }
+
+  const currentTestimonial = testimonials[currentIndex]
+
+  return (
+    <div className="relative">
+      {/* Main Content */}
+      <div className="flex items-center justify-center">
+        {/* Left Arrow */}
+        <button
+          onClick={prevTestimonial}
+          className="absolute left-0 md:left-4 z-10 p-2 rounded-full bg-elegant-blue hover:bg-elegant-blue/90 shadow-lg transition-all duration-200 hover:scale-110"
+          aria-label="Previous testimonial"
+        >
+          <ChevronLeft className="w-6 h-6 text-accent-gold" />
+        </button>
+
+        {/* Testimonial Content */}
+        <div
+          className={`max-w-2xl mx-auto text-center px-12 md:px-16 transition-all duration-300 ease-in-out transform ${
+            isTransitioning ? "opacity-0 scale-95 translate-y-2" : "opacity-100 scale-100 translate-y-0"
+          }`}
+        >
+          {/* Client Photo */}
+          <div className="mb-8">
+            <div className="relative w-24 h-24 md:w-32 md:h-32 mx-auto">
+              <Image
+                src={currentTestimonial.image || "/placeholder.svg"}
+                alt={`${currentTestimonial.name} - ${currentTestimonial.role}`}
+                width={128}
+                height={128}
+                className="w-full h-full rounded-full object-cover border-3 border-accent-gold shadow-lg transition-transform duration-300"
+              />
+            </div>
+          </div>
+
+          {/* Testimonial Text */}
+          <div className="mb-8">
+            <p className="text-lg md:text-xl leading-relaxed text-elegant-blue italic">"{currentTestimonial.text}"</p>
+          </div>
+
+          {/* Client Info */}
+          <div className="mb-8">
+            <h4 className="text-xl md:text-2xl font-bold text-accent-gold mb-1">{currentTestimonial.name}</h4>
+
+            <p className="text-base md:text-lg font-semibold text-elegant-blue/80">{currentTestimonial.role}</p>
+          </div>
+        </div>
+
+        {/* Right Arrow */}
+        <button
+          onClick={nextTestimonial}
+          className="absolute right-0 md:right-4 z-10 p-2 rounded-full bg-elegant-blue hover:bg-elegant-blue/90 shadow-lg transition-all duration-200 hover:scale-110"
+          aria-label="Next testimonial"
+        >
+          <ChevronRight className="w-6 h-6 text-accent-gold" />
+        </button>
+      </div>
+
+      {/* Dot Pagination */}
+      <div className="flex justify-center space-x-3 mt-8">
+        {testimonials.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToTestimonial(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentIndex ? "bg-elegant-blue scale-110" : "bg-elegant-blue/30 hover:bg-elegant-blue/50"
+            }`}
+            aria-label={`Go to testimonial ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
