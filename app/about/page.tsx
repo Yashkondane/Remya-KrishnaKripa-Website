@@ -68,7 +68,7 @@ export default function AboutPage() {
           </ScrollReveal>
 
           {/* Introduction Split Column */}
-          <ScrollReveal animation="slide-up" delay={200}>
+          <ScrollReveal animation="fade" delay={200}>
             <section className="px-6 md:px-12 py-16 md:py-24 bg-elegant-blue text-warm-beige backdrop-blur-sm">
               <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -185,7 +185,7 @@ export default function AboutPage() {
 
                   <div className="bg-accent-gold/20 p-8 rounded-lg backdrop-blur-sm hover-lift animate-fadeInUp stagger-3 border border-accent-gold/30">
                     <p className="text-lg italic text-accent-gold font-semibold">
-                      "That journey led me to what I now know was my soul's calling. ✨ To help others reconnect with
+                      "That journey led me to what I now know was my soul's calling. To help others reconnect with
                       their soul wisdom, heal what's unseen, and rise into their purpose."
                     </p>
                   </div>
@@ -195,11 +195,11 @@ export default function AboutPage() {
           </ScrollReveal>
 
           {/* The Turning Point */}
-          <ScrollReveal animation="slide-up" delay={200}>
+          <ScrollReveal animation="fade" delay={200}>
             <section className="bg-elegant-blue text-warm-beige px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-4xl mx-auto">
                 <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 animate-fadeInUp">
-                  🌌 The Turning Point
+                  The Turning Point
                 </h3>
 
                 <div className="space-y-6">
@@ -225,7 +225,7 @@ export default function AboutPage() {
             <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-4xl mx-auto">
                 <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 animate-fadeInUp">
-                  💖 My Work Today
+                  My Work Today
                 </h3>
 
                 <div className="space-y-6">
@@ -299,7 +299,7 @@ export default function AboutPage() {
           </ScrollReveal>
 
           {/* What We Offer - Services Cards */}
-          <ScrollReveal animation="slide-up" delay={400}>
+          <ScrollReveal animation="fade" delay={400}>
             <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-6xl mx-auto">
                 <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-12 text-center animate-fadeInUp">
@@ -455,7 +455,7 @@ export default function AboutPage() {
             <section className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-4xl mx-auto">
                 <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 text-center animate-fadeInUp">
-                  🕊️ My Philosophy
+                  My Philosophy
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -491,11 +491,11 @@ export default function AboutPage() {
           </ScrollReveal>
 
           {/* Today Section */}
-          <ScrollReveal animation="slide-up" delay={200}>
+          <ScrollReveal animation="fade" delay={200}>
             <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-4xl mx-auto">
                 <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 text-center animate-fadeInUp">
-                  👑 Today...
+                  Today...
                 </h3>
 
                 <div className="space-y-6">
@@ -539,7 +539,7 @@ export default function AboutPage() {
             <section className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-4xl mx-auto text-center">
                 <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 animate-fadeInUp">
-                  💌 From My Heart to Yours
+                  From My Heart to Yours
                 </h3>
 
                 <div className="space-y-6">
@@ -553,19 +553,17 @@ export default function AboutPage() {
                     you home.
                   </p>
 
-                  <div className="bg-white/10 backdrop-blur-sm p-8 rounded-lg border border-accent-gold/40 animate-fadeInUp stagger-3">
-                    <p className="text-lg italic text-accent-gold font-semibold">
-                      ✨ Would you like to experience your Akashic Reading? DM me or click below to book your session
-                      today.
-                    </p>
-                  </div>
+                  <p className="text-lg italic text-accent-gold font-semibold">
+                    Would you like to experience your Akashic Reading? DM me or click below to book your session
+                    today.
+                  </p>
                 </div>
               </div>
             </section>
           </ScrollReveal>
 
           {/* Final CTA Section */}
-          <ScrollReveal animation="slide-up" delay={200}>
+          <ScrollReveal animation="fade" delay={200}>
             <section className="bg-accent-gold px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-4xl mx-auto text-center animate-fadeInUp">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-elegant-blue mb-6 font-bold">

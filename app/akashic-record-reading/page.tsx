@@ -89,31 +89,7 @@ export default function AkashicRecordReadingPage() {
     <>
       <SimplePreloader />
       <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
-        {/* Navigation */}
-        <nav className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 bg-elegant-blue/10 backdrop-blur-sm animate-fadeInDown">
-          <Link href="/" className="text-xl md:text-2xl text-accent-gold text-glow animate-pulse-slow">
-            AkashicReading.
-          </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/about" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              About
-            </Link>
-            <Link href="/my-book" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              My Book
-            </Link>
-            <Link href="/journal" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Journal
-            </Link>
-            <Link href="/contact" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Contact
-            </Link>
-          </div>
-
-          <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-6 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 btn-hover-effect">
-            Book Now
-          </Button>
-        </nav>
 
         {/* Hero Section */}
         <ScrollReveal animation="fade">
@@ -172,7 +148,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         {/* What an Akashic Reading Truly Is Section */}
-        <ScrollReveal animation="slide-up" delay={100}>
+        <ScrollReveal animation="fade" delay={100}>
           <section className="px-6 md:px-12 py-16 md:py-24 bg-white/40 backdrop-blur-sm">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -229,7 +205,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         {/* Who This Is For Section */}
-        <ScrollReveal animation="slide-up" delay={150}>
+        <ScrollReveal animation="fade" delay={150}>
           <section className="px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-5xl mx-auto">
               {/* Title */}
@@ -302,7 +278,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         {/* Video & Intention Section */}
-        <ScrollReveal animation="slide-up" delay={200}>
+        <ScrollReveal animation="fade" delay={200}>
           <section className="bg-elegant-blue/5 backdrop-blur-sm px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-6xl mx-auto">
               {/* Title */}
@@ -394,7 +370,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         {/* What Happens During the Session Section */}
-        <ScrollReveal animation="slide-up" delay={250}>
+        <ScrollReveal animation="fade" delay={250}>
           <section className="bg-elegant-blue/5 backdrop-blur-sm px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-5xl mx-auto">
               {/* Title */}
@@ -483,7 +459,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         {/* Reading Packages Section */}
-        <ScrollReveal animation="slide-up" delay={300}>
+        <ScrollReveal animation="fade" delay={300}>
           <section className="px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-7xl mx-auto">
               {/* Title */}
@@ -600,7 +576,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         {/* What You'll Experience After Section */}
-        <ScrollReveal animation="slide-up" delay={350}>
+        <ScrollReveal animation="fade" delay={350}>
           <section className="px-6 md:px-12 py-16 md:py-24 bg-white/40 backdrop-blur-sm">
             <div className="max-w-5xl mx-auto">
               {/* Title */}
@@ -659,7 +635,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         {/* FAQ Section */}
-        <ScrollReveal animation="slide-up" delay={400}>
+        <ScrollReveal animation="fade" delay={400}>
           <section className="px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-4xl mx-auto">
               {/* Title */}
@@ -689,9 +665,8 @@ export default function AkashicRecordReadingPage() {
                                   p-6 md:p-8 text-left"
                       >
                         <h3
-                          className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${
-                            isOpen ? "text-accent-gold" : "text-elegant-blue"
-                          }`}
+                          className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${isOpen ? "text-accent-gold" : "text-elegant-blue"
+                            }`}
                         >
                           {faq.q}
                         </h3>
@@ -706,9 +681,8 @@ export default function AkashicRecordReadingPage() {
 
                       {/* Answer */}
                       <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                        }`}
+                        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                          }`}
                       >
                         <div className="px-6 md:px-8 pb-6 md:pb-8">
                           <p className="text-elegant-blue/80 leading-relaxed">{faq.a}</p>
@@ -751,7 +725,7 @@ export default function AkashicRecordReadingPage() {
         </ScrollReveal>
 
         <WhatsAppButton />
-        <Footer />
+
       </div>
     </>
   )

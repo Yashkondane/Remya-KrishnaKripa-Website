@@ -21,31 +21,7 @@ export default function CareerAcceleratorPage() {
     <>
       <SimplePreloader />
       <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
-        {/* Navigation */}
-        <nav className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 bg-elegant-blue/10 backdrop-blur-sm animate-fadeInDown">
-          <Link href="/" className="text-xl md:text-2xl text-accent-gold text-glow animate-pulse-slow">
-            AkashicReading.
-          </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/about" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              About
-            </Link>
-            <Link href="/my-book" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              My Book
-            </Link>
-            <Link href="/journal" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Journal
-            </Link>
-            <Link href="/contact" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Contact
-            </Link>
-          </div>
-
-          <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-6 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 btn-hover-effect w-full md:w-auto">
-            Book Now
-          </Button>
-        </nav>
 
         {/* Hero Section */}
         <ScrollReveal animation="fade">
@@ -108,7 +84,7 @@ export default function CareerAcceleratorPage() {
         </ScrollReveal>
 
         {/* What Is Soul-Aligned Career Coaching Section */}
-        <ScrollReveal animation="slide-up" delay={100}>
+        <ScrollReveal animation="fade" delay={100}>
           <section className="px-6 md:px-12 py-16 md:py-20 bg-white/50">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 text-elegant-blue">
@@ -160,7 +136,7 @@ export default function CareerAcceleratorPage() {
         </ScrollReveal>
 
         {/* Why High-Achievers Get Stuck Section */}
-        <ScrollReveal animation="slide-up" delay={200}>
+        <ScrollReveal animation="fade" delay={200}>
           <section className="bg-elegant-blue/5 backdrop-blur-sm px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -295,7 +271,7 @@ export default function CareerAcceleratorPage() {
         </ScrollReveal>
 
         {/* What You Will Gain Section */}
-        <ScrollReveal animation="slide-up" delay={350}>
+        <ScrollReveal animation="fade" delay={350}>
           <section className="px-6 md:px-12 py-16 md:py-20 bg-elegant-blue/5">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -414,7 +390,7 @@ export default function CareerAcceleratorPage() {
         </ScrollReveal>
 
         {/* Transformations Section */}
-        <ScrollReveal animation="slide-up" delay={450}>
+        <ScrollReveal animation="fade" delay={450}>
           <section className="px-6 md:px-12 py-16 md:py-20 bg-gradient-to-b from-accent-gold/10 to-white/50">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -493,7 +469,7 @@ export default function CareerAcceleratorPage() {
         </ScrollReveal>
 
         {/* Footer */}
-        <Footer />
+
         <WhatsAppButton />
       </div>
     </>

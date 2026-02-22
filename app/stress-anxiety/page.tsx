@@ -21,31 +21,7 @@ export default function StressAnxietyPage() {
     <>
       <SimplePreloader />
       <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
-        {/* Navigation */}
-        <nav className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 bg-elegant-blue/10 backdrop-blur-sm animate-fadeInDown">
-          <Link href="/" className="text-xl md:text-2xl text-accent-gold text-glow animate-pulse-slow">
-            AkashicReading.
-          </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/about" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              About
-            </Link>
-            <Link href="/my-book" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              My Book
-            </Link>
-            <Link href="/journal" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Journal
-            </Link>
-            <Link href="/contact" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Contact
-            </Link>
-          </div>
-
-          <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-6 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 btn-hover-effect">
-            Book Now
-          </Button>
-        </nav>
 
         {/* Hero Section */}
         <ScrollReveal animation="fade">
@@ -121,7 +97,7 @@ export default function StressAnxietyPage() {
         </ScrollReveal>
 
         <WhatsAppButton />
-        <Footer />
+
       </div>
     </>
   )

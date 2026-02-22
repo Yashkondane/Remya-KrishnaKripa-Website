@@ -21,31 +21,7 @@ export default function ConfidentCommunicationPage() {
     <>
       <SimplePreloader />
       <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
-        {/* Navigation */}
-        <nav className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 bg-elegant-blue/10 backdrop-blur-sm animate-fadeInDown">
-          <Link href="/" className="text-xl md:text-2xl text-accent-gold text-glow animate-pulse-slow">
-            AkashicReading.
-          </Link>
 
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/about" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              About
-            </Link>
-            <Link href="/my-book" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              My Book
-            </Link>
-            <Link href="/journal" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Journal
-            </Link>
-            <Link href="/contact" className="hover:text-accent-gold transition-all duration-300 hover:scale-105">
-              Contact
-            </Link>
-          </div>
-
-          <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-6 py-2 rounded-lg shadow-md transition-all duration-300 hover:scale-105 btn-hover-effect">
-            Book Now
-          </Button>
-        </nav>
 
         {/* Hero Section */}
         <ScrollReveal animation="fade">
@@ -101,7 +77,7 @@ export default function ConfidentCommunicationPage() {
         </ScrollReveal>
 
         {/* What Is Confident Communication Section */}
-        <ScrollReveal animation="slide-up" delay={100}>
+        <ScrollReveal animation="fade" delay={100}>
           <section className="px-6 md:px-12 py-16 md:py-20 bg-white/50">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-6 text-elegant-blue">
@@ -147,7 +123,7 @@ export default function ConfidentCommunicationPage() {
         </ScrollReveal>
 
         {/* Why Women Struggle Section */}
-        <ScrollReveal animation="slide-up" delay={200}>
+        <ScrollReveal animation="fade" delay={200}>
           <section className="bg-elegant-blue/5 backdrop-blur-sm px-6 md:px-12 py-16 md:py-24">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
@@ -312,7 +288,7 @@ export default function ConfidentCommunicationPage() {
         </ScrollReveal>
 
         {/* Video Insights Section */}
-        <ScrollReveal animation="slide-up" delay={300}>
+        <ScrollReveal animation="fade" delay={300}>
           <section className="px-6 md:px-12 py-16 md:py-20 bg-elegant-blue/5">
             <div className="max-w-5xl mx-auto">
               <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-12 text-center text-elegant-blue">
@@ -419,7 +395,7 @@ export default function ConfidentCommunicationPage() {
         </ScrollReveal>
 
         {/* What You Will Experience Section */}
-        <ScrollReveal animation="slide-up" delay={400}>
+        <ScrollReveal animation="fade" delay={400}>
           <section className="bg-elegant-blue/5 px-6 md:px-12 py-16 md:py-20">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-12 text-center text-elegant-blue">
@@ -441,7 +417,9 @@ export default function ConfidentCommunicationPage() {
                     key={index}
                     className="flex items-start space-x-3 bg-white/70 p-5 rounded-lg border border-accent-gold/20 hover:border-accent-gold/40 transition-all duration-300"
                   >
-                    <span className="text-accent-gold text-xl flex-shrink-0">💎</span>
+                    <div className="w-6 h-6 rounded-full bg-accent-gold/20 flex items-center justify-center flex-shrink-0">
+                      <div className="w-2 h-2 rounded-full bg-accent-gold"></div>
+                    </div>
                     <p className="text-lg text-elegant-blue/90">{item}</p>
                   </div>
                 ))}
@@ -474,7 +452,9 @@ export default function ConfidentCommunicationPage() {
                     key={index}
                     className="flex items-center space-x-3 bg-white/80 p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300"
                   >
-                    <span className="text-accent-gold text-2xl">✨</span>
+                    <div className="w-8 h-8 rounded-full bg-accent-gold/10 flex items-center justify-center flex-shrink-0">
+                      <div className="w-2 h-2 rounded-full bg-accent-gold"></div>
+                    </div>
                     <p className="text-elegant-blue/90">{item}</p>
                   </div>
                 ))}
@@ -517,7 +497,7 @@ export default function ConfidentCommunicationPage() {
         </ScrollReveal>
 
         <WhatsAppButton />
-        <Footer />
+
       </div>
     </>
   )

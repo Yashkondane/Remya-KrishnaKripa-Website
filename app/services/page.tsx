@@ -104,7 +104,15 @@ export default function ServicesPage() {
               {services.map((service, index) => (
                 <ScrollReveal key={service.id} animation="fade">
                   <div
-                    className={`flex flex-col lg:flex-row gap-12 lg:gap-16 items-center ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                    id={
+                      service.title.toLowerCase().includes("akashic") ? "akashic" :
+                        service.title.toLowerCase().includes("past life") ? "past-life" :
+                          service.title.toLowerCase().includes("inner child") ? "inner-child" :
+                            service.title.toLowerCase().includes("communication") ? "communication" :
+                              service.title.toLowerCase().includes("career") ? "career" :
+                                undefined
+                    }
+                    className={`flex flex-col lg:flex-row gap-12 lg:gap-16 items-center scroll-mt-24 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
                       }`}
                   >
                     {/* Image/Visual Side */}

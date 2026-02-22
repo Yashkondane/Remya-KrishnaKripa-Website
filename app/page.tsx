@@ -104,7 +104,7 @@ export default function HomePage() {
 
         {/* Services Section */}
         <ScrollReveal animation="fade">
-          <section className="bg-black px-6 md:px-12 py-16 md:py-24 text-white">
+          <section className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24 text-warm-beige">
             <div className="max-w-7xl mx-auto">
               <ScrollReveal animation="fade" delay={1}>
                 <div className="text-center mb-12">
@@ -118,16 +118,16 @@ export default function HomePage() {
                 {services.map((service, index) => (
                   <ScrollReveal key={service.id} animation="scale" delay={index + 1}>
                     <Link href={service.link} className="block">
-                      <div className="bg-elegant-blue/20 p-8 rounded-xl border border-accent-gold/30 hover:bg-elegant-blue/70 hover:scale-[1.02] transition-all duration-500 group cursor-pointer h-full hover:shadow-2xl hover:shadow-elegant-blue/30">
+                      <div className="bg-white/10 p-8 rounded-xl border border-accent-gold/20 hover:bg-accent-gold/20 hover:scale-[1.02] transition-all duration-500 group cursor-pointer h-full hover:shadow-2xl hover:shadow-accent-gold/10">
                         <div className="space-y-4">
                           <span className="text-3xl font-bold text-accent-gold group-hover:scale-110 transition-transform duration-300">
                             {service.id}.
                           </span>
                           <div>
-                            <h3 className="text-2xl font-semibold text-white mb-3 group-hover:text-accent-gold transition-colors duration-300">
+                            <h3 className="text-2xl font-semibold text-warm-beige mb-3 group-hover:text-accent-gold transition-colors duration-300">
                               {service.title}
                             </h3>
-                            <p className="text-base leading-relaxed text-white/80 group-hover:text-white transition-colors duration-300">
+                            <p className="text-base leading-relaxed text-warm-beige/80 group-hover:text-warm-beige transition-colors duration-300">
                               {service.description}
                             </p>
                           </div>
