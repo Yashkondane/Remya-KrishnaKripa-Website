@@ -38,16 +38,21 @@ export default function Navbar() {
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
                         <Image
-                            src="/images/logo-new.png"
-                            alt="AkashicReading Logo"
+                            src="/images/download (18).png"
+                            alt="Rise with Remya Logo"
                             width={64}
                             height={64}
                             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                         />
                     </div>
-                    <span className="text-lg md:text-xl text-elegant-blue font-bold group-hover:text-accent-gold transition-colors duration-300">
-                        AkashicReading.
-                    </span>
+                    <div className="flex flex-col leading-tight">
+                        <span className="text-xl md:text-2xl text-elegant-blue font-bold group-hover:text-accent-gold transition-colors duration-300 tracking-tight">
+                            Rise with Remya
+                        </span>
+                        <span className="text-[11px] md:text-xs text-elegant-blue/60 group-hover:text-accent-gold/70 transition-colors duration-300 font-medium tracking-wide">
+                            Akashic Reader &amp; Energy Healer
+                        </span>
+                    </div>
                 </Link>
 
                 <div className="hidden md:flex items-center space-x-8">
@@ -95,7 +100,7 @@ export default function Navbar() {
                         href="/video-testimonials"
                         className="text-elegant-blue hover:text-accent-gold transition-all duration-300 hover:scale-105"
                     >
-                        Video Testimonials
+                        Client Testimonials
                     </Link>
 
                     <Link
@@ -150,7 +155,7 @@ export default function Navbar() {
                             className="flex flex-col items-center gap-1 text-xs text-elegant-blue hover:text-accent-gold transition-all duration-300"
                         >
                             <div className="w-1 h-1 bg-accent-gold rounded-full opacity-0"></div>
-                            <span>Videos</span>
+                            <span>Testimonials</span>
                         </Link>
                         <Link
                             href="/my-book"

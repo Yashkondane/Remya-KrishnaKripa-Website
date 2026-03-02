@@ -13,14 +13,17 @@ export default function Footer() {
           {/* Left Column - About */}
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-2">
-              <div className="w-24 h-24 flex-shrink-0">
+              <div className="w-20 h-20 flex-shrink-0">
                 <img
-                  src="/images/logo-new.png"
-                  alt="AkashicReading Logo"
+                  src="/images/download (18).png"
+                  alt="Rise with Remya Logo"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-accent-gold">AkashicReading.</h3>
+              <div className="flex flex-col leading-tight">
+                <h3 className="text-xl font-bold text-accent-gold">Rise with Remya</h3>
+                <span className="text-xs text-white/60 font-medium tracking-wide">Akashic Reader &amp; Energy Healer</span>
+              </div>
             </div>
             <p className="text-base leading-relaxed text-white/90">
               A dedicated spiritual guide helping souls connect with their divine wisdom through Akashic Records
@@ -160,7 +163,7 @@ export default function Footer() {
 
         <div className="border-t border-accent-gold/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-white/70">© 2025 AkashicReading. All rights reserved.</p>
+            <p className="text-sm text-white/70">© 2025 Rise with Remya. All rights reserved.</p>
             <div className="flex space-x-6">
               <a href="#" className="text-sm text-white/70 hover:text-accent-gold transition-colors duration-200">
                 Privacy Policy

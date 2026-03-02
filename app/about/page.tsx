@@ -49,10 +49,10 @@ export default function AboutPage() {
                       {/* Rounded Photo Container with 9:16 Aspect Ratio */}
                       <div className="relative w-full aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl bg-accent-gold/20 backdrop-blur-sm border-4 border-accent-gold/50 transition-all duration-500 hover:border-accent-gold/80">
                         <Image
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Feb%2017%2C%202026%2C%2008_27_17%20PM_cropped_processed_by_imagy%20%281%29-Qz73h9cv36RYoBG7T5ve6o10Pe0v7B.png"
+                          src="/images/ChatGPT Image Feb 17, 2026, 08_27_17 PM.png"
                           alt="Remya - Spiritual Guide"
                           fill
-                          className="object-cover object-center"
+                          className="object-cover object-top"
                           priority
                         />
                       </div>

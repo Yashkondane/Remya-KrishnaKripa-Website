@@ -38,17 +38,17 @@ export default function SimplePreloader() {
         }`}
     >
       <div className="text-center animate-fadeInUp">
-        <div className="relative mb-8 w-64 h-64 mx-auto">
+        <div className="relative mb-6 w-52 h-52 mx-auto">
           {/* Outer glow ring */}
           <div className="absolute inset-0 rounded-full border-4 border-accent-gold/20 animate-pulse"></div>
           <div className="absolute inset-2 rounded-full border-2 border-elegant-blue/30 animate-ping" style={{ animationDuration: '2s' }}></div>
 
-          {/* Logo container with rotation */}
+          {/* Logo container with gentle rotation */}
           <div className="absolute inset-0 flex items-center justify-center animate-spin-slow">
-            <div className="w-56 h-56 relative">
+            <div className="w-44 h-44 relative">
               <img
-                src="/images/logo-new.png"
-                alt="AkashicReading Logo"
+                src="/images/download (18).png"
+                alt="Rise with Remya Logo"
                 className="w-full h-full object-contain drop-shadow-2xl"
               />
             </div>
@@ -58,7 +58,8 @@ export default function SimplePreloader() {
           <div className="absolute inset-8 bg-gradient-to-r from-elegant-blue/10 to-accent-gold/10 rounded-full blur-xl"></div>
         </div>
 
-        <h1 className="text-2xl md:text-3xl text-elegant-blue font-serif mb-4 font-bold">AkashicReading.</h1>
+        <h1 className="text-3xl md:text-4xl text-elegant-blue font-serif font-bold tracking-tight mb-1">Rise with Remya</h1>
+        <p className="text-sm md:text-base text-elegant-blue/60 font-medium tracking-wide mb-6">Akashic Reader &amp; Energy Healer</p>
 
         <div className="flex justify-center space-x-1">
           {[0, 1, 2, 3, 4].map((index) => (

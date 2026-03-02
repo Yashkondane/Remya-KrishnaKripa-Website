@@ -60,22 +60,20 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left Column - Image */}
-              <div className="space-y-6 order-1 lg:order-1 animate-scaleIn stagger-2">
-                <div className="relative hover-lift max-w-md mx-auto rounded-full">
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%20Feb%2017%2C%202026%2C%2008_2-wEQmJL9GPOj6n1YHtJBguMITPiMO5N.png"
-                    alt="Remya - Spiritual Guide"
-                    width={600}
-                    height={600}
-                    className="w-full aspect-square rounded-full shadow-2xl object-cover border-4 border-accent-gold/40 transition-all duration-500 hover:border-accent-gold/80"
-                    priority
-                  />
-                </div>
-
-                <div className="flex flex-col space-y-3 max-w-md mx-auto animate-fadeInUp stagger-4">
-                  <div className="h-1 bg-accent-gold rounded-full animate-slideInLeft stagger-1"></div>
-                  <div className="h-1 bg-accent-gold rounded-full w-3/4 animate-slideInLeft stagger-2"></div>
-                  <div className="h-1 bg-accent-gold rounded-full w-1/2 animate-slideInLeft stagger-3"></div>
+              <div className="order-1 lg:order-1 animate-scaleIn stagger-2">
+                <div className="relative hover-lift max-w-sm mx-auto">
+                  <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-4 border-accent-gold/40 transition-all duration-500 hover:border-accent-gold/80">
+                    <Image
+                      src="/images/IMG20250704090845.jpg"
+                      alt="Remya - Spiritual Guide"
+                      fill
+                      className="object-cover object-top"
+                      priority
+                    />
+                  </div>
+                  {/* Decorative glow blobs */}
+                  <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent-gold/20 rounded-full blur-xl animate-float stagger-1"></div>
+                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-elegant-blue/20 rounded-full blur-2xl animate-float stagger-3"></div>
                 </div>
               </div>
 
