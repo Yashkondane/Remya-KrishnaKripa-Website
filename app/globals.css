@@ -4,19 +4,23 @@
 
 @layer base {
   :root {
-    --background: 28 20% 92%; /* #F4E3DD beige */
-    --foreground: 225 35% 31%; /* #34426E deep blue */
+    --background: 28 20% 92%;
+    /* #F4E3DD beige */
+    --foreground: 225 35% 31%;
+    /* #34426E deep blue */
     --card: 28 20% 95%;
     --card-foreground: 225 35% 31%;
     --popover: 28 20% 95%;
     --popover-foreground: 225 35% 31%;
-    --primary: 225 35% 31%; /* Deep blue */
+    --primary: 225 35% 31%;
+    /* Deep blue */
     --primary-foreground: 28 20% 92%;
     --secondary: 225 20% 85%;
     --secondary-foreground: 225 35% 31%;
     --muted: 225 15% 88%;
     --muted-foreground: 225 20% 45%;
-    --accent: 28 35% 75%; /* Warm accent */
+    --accent: 28 35% 75%;
+    /* Warm accent */
     --accent-foreground: 225 35% 31%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 28 20% 92%;
@@ -30,6 +34,7 @@
     --chart-5: 225 40% 50%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 225 35% 10%;
     --foreground: 28 20% 92%;
@@ -62,6 +67,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
@@ -152,6 +158,7 @@ html {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -163,6 +170,7 @@ html {
     opacity: 0;
     transform: translateY(-30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -173,6 +181,7 @@ html {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -183,6 +192,7 @@ html {
     opacity: 0;
     transform: translateX(-50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -194,6 +204,7 @@ html {
     opacity: 0;
     transform: translateX(50px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -205,6 +216,7 @@ html {
     opacity: 0;
     transform: translateY(50px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -216,6 +228,7 @@ html {
     opacity: 0;
     transform: scale(0.8);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -223,20 +236,24 @@ html {
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
 
 @keyframes pulse-slow {
+
   0%,
   100% {
     opacity: 1;
   }
+
   50% {
     opacity: 0.7;
   }
@@ -246,6 +263,7 @@ html {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
@@ -255,8 +273,65 @@ html {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-slow-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: scaleY(0.3);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(80px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(80px) rotate(-360deg);
+  }
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 15px rgba(201, 168, 106, 0.3), 0 0 30px rgba(201, 168, 106, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(201, 168, 106, 0.6), 0 0 60px rgba(201, 168, 106, 0.3);
   }
 }
 
@@ -266,7 +341,27 @@ html {
 }
 
 .animate-spin-slow {
-  animation: spin-slow 3s linear infinite;
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-reverse 12s linear infinite;
+}
+
+.animate-wave {
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+.animate-orbit {
+  animation: orbit 4s linear infinite;
+}
+
+.animate-progress {
+  animation: progress-fill 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
 }
 
 /* Animation classes */
@@ -317,15 +412,19 @@ html {
 .stagger-1 {
   animation-delay: 0.1s;
 }
+
 .stagger-2 {
   animation-delay: 0.2s;
 }
+
 .stagger-3 {
   animation-delay: 0.3s;
 }
+
 .stagger-4 {
   animation-delay: 0.4s;
 }
+
 .stagger-5 {
   animation-delay: 0.5s;
 }
@@ -462,15 +561,20 @@ html {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
 }
 
-/* Smooth transitions for all interactive elements */
-* {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s
-    ease;
+/* Smooth transitions for interactive elements only — do NOT apply to * as it breaks keyframe animations */
+a,
+button,
+[role="button"],
+input,
+select,
+textarea {
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Updated beige background utility class - static, no animation */

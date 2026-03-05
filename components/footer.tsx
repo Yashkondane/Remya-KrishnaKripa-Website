@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-2">
               <div className="w-20 h-20 flex-shrink-0">
                 <img
-                  src="/images/download (18).png"
+                  src="/images/favicon.ico"
                   alt="Rise with Remya Logo"
                   className="w-full h-full object-contain"
                 />

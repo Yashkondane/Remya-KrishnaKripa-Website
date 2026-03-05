@@ -34,22 +34,32 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="flex items-center justify-between px-6 py-4 md:px-12 md:py-6 bg-white/60 backdrop-blur-sm animate-fadeInDown border-b border-elegant-blue/10 sticky top-0 z-50">
+            <nav className="flex items-center justify-between px-6 py-3 md:px-12 md:py-4 sticky top-0 z-50"
+                style={{
+                    background: "rgba(244, 227, 221, 0.82)",
+                    backdropFilter: "blur(20px) saturate(180%)",
+                    WebkitBackdropFilter: "blur(20px) saturate(180%)",
+                    borderBottom: "1px solid rgba(201, 168, 106, 0.2)",
+                    boxShadow: "0 4px 24px rgba(52, 66, 110, 0.06), 0 1px 0 rgba(201,168,106,0.15)",
+                }}
+            >
                 <Link href="/" className="flex items-center gap-3 group">
                     <div className="relative w-12 h-12 md:w-16 md:h-16 flex-shrink-0">
                         <Image
                             src="/images/download (18).png"
                             alt="Rise with Remya Logo"
-                            width={64}
-                            height={64}
+                            width={128}
+                            height={128}
+                            quality={100}
+                            unoptimized
                             className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                         />
                     </div>
                     <div className="flex flex-col leading-tight">
-                        <span className="text-xl md:text-2xl text-elegant-blue font-bold group-hover:text-accent-gold transition-colors duration-300 tracking-tight">
+                        <span className="text-xl md:text-2xl text-elegant-blue font-bold group-hover:text-accent-gold transition-colors duration-300 tracking-tight" style={{ fontFamily: "'Libre Baskerville', Georgia, serif" }}>
                             Rise with Remya
                         </span>
-                        <span className="text-[11px] md:text-xs text-elegant-blue/60 group-hover:text-accent-gold/70 transition-colors duration-300 font-medium tracking-wide">
+                        <span className="text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-elegant-blue/50 group-hover:text-accent-gold/70 transition-colors duration-300 font-medium">
                             Akashic Reader &amp; Energy Healer
                         </span>
                     </div>

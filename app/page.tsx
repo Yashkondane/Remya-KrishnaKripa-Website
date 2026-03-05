@@ -1,12 +1,12 @@
 import { Libre_Baskerville } from "next/font/google"
-import { ChevronDown } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import TestimonialSlider from "../components/testimonial-slider"
 import FAQAccordion from "../components/faq-accordion"
 import BlogSection from "../components/blog-section"
-import Footer from "../components/footer"
+
 import SimplePreloader from "../components/simple-preloader"
 import WhatsAppButton from "../components/whatsapp-button"
 import ScrollReveal from "../components/scroll-reveal"
@@ -56,45 +56,107 @@ export default function HomePage() {
       <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
 
         {/* Hero Section */}
-        <main className="px-6 md:px-12 py-8 md:py-16">
-          <div className="max-w-7xl mx-auto">
+        <main className="px-6 md:px-12 py-10 md:py-20 relative overflow-hidden">
+          {/* Subtle hero background glow */}
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, rgba(201,168,106,0.12) 0%, transparent 65%)",
+              filter: "blur(60px)",
+              transform: "translate(20%, -20%)",
+            }}
+          />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+            style={{
+              background: "radial-gradient(circle, rgba(52,66,110,0.08) 0%, transparent 65%)",
+              filter: "blur(50px)",
+              transform: "translate(-20%, 20%)",
+            }}
+          />
+          <div className="max-w-7xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               {/* Left Column - Image */}
               <div className="order-1 lg:order-1 animate-scaleIn stagger-2">
                 <div className="relative hover-lift max-w-sm mx-auto">
-                  <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-4 border-accent-gold/40 transition-all duration-500 hover:border-accent-gold/80">
+                  {/* Outer decorative frame */}
+                  <div className="absolute -inset-3 rounded-3xl opacity-40"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(201,168,106,0.4), rgba(52,66,110,0.2), rgba(201,168,106,0.3))",
+                      filter: "blur(16px)",
+                    }}
+                  />
+                  <div className="relative w-full aspect-[3/4] rounded-3xl overflow-hidden shadow-2xl border-2 transition-all duration-500"
+                    style={{ borderColor: "rgba(201,168,106,0.5)" }}
+                  >
                     <Image
                       src="/images/IMG20250704090845.jpg"
                       alt="Remya - Spiritual Guide"
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-top transition-transform duration-700 hover:scale-105"
                       priority
+                    />
+                    {/* Subtle vignette overlay */}
+                    <div className="absolute inset-0 pointer-events-none"
+                      style={{
+                        background: "linear-gradient(to top, rgba(52,66,110,0.15) 0%, transparent 40%)",
+                      }}
                     />
                   </div>
                   {/* Decorative glow blobs */}
                   <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent-gold/20 rounded-full blur-xl animate-float stagger-1"></div>
-                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-elegant-blue/20 rounded-full blur-2xl animate-float stagger-3"></div>
+                  <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-elegant-blue/15 rounded-full blur-2xl animate-float stagger-3"></div>
                 </div>
               </div>
 
               {/* Right Column - Text */}
               <div className="space-y-8 order-2 lg:order-2">
-                <div className="space-y-6">
-                  <p className="text-lg md:text-xl text-accent-gold animate-fadeInUp stagger-1">Hello, I'm Remya</p>
+                <div className="space-y-5">
+                  <div className="flex items-center gap-3 animate-fadeInUp stagger-1">
+                    <div className="w-8 h-[1.5px]" style={{ background: "linear-gradient(90deg, #c9a86a, transparent)" }} />
+                    <p className="text-sm md:text-base uppercase tracking-[0.2em] font-semibold" style={{ color: "#c9a86a" }}>Hello, I'm Remya</p>
+                  </div>
 
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-elegant-blue animate-fadeInUp stagger-2">
-                    Who is <span className="text-accent-gold animate-float">Remya Krishnakripa</span> and How Can She
-                    Unlock Your Highest Potential?
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-elegant-blue animate-fadeInUp stagger-2" style={{ fontFamily: "'Libre Baskerville', Georgia, serif" }}>
+                    Who is{" "}
+                    <span className="relative inline-block">
+                      <span className="text-accent-gold">Remya Krishnakripa</span>
+                    </span>
+                    {" "}and How Can She Unlock Your{" "}
+                    <em style={{ fontStyle: "italic", color: "rgba(52,66,110,0.7)" }}>Highest Potential?</em>
                   </h1>
+
+                  <p className="text-base md:text-lg text-elegant-blue/65 leading-relaxed animate-fadeInUp stagger-3 max-w-lg">
+                    A decade of guiding souls through Akashic wisdom, energy healing, and transformative spiritual coaching.
+                  </p>
                 </div>
 
-                <Link
-                  href="#about"
-                  className="flex items-center space-x-3 pt-8 hover:text-accent-gold transition-all duration-300 animate-fadeInUp stagger-3 hover:scale-105"
-                >
-                  <span className="text-lg text-elegant-blue/70">Know More</span>
-                  <ChevronDown className="w-5 h-5 animate-bounce text-accent-gold" />
-                </Link>
+                <div className="flex flex-col sm:flex-row gap-4 animate-fadeInUp stagger-4">
+                  <a
+                    href="#about"
+                    className="group inline-flex items-center gap-3 px-6 py-3 rounded-xl font-semibold text-warm-beige transition-all duration-300 hover:scale-105"
+                    style={{
+                      background: "linear-gradient(135deg, #34426e, #2a3659)",
+                      boxShadow: "0 4px 20px rgba(52,66,110,0.3)",
+                    }}
+                  >
+                    <span>Know More</span>
+                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </a>
+                  <a
+                    href="/contact"
+                    className="group inline-flex items-center gap-3 px-6 py-3 rounded-xl font-semibold border-2 transition-all duration-300 hover:scale-105 text-elegant-blue"
+                    style={{
+                      borderColor: "rgba(201,168,106,0.5)",
+                      background: "rgba(201,168,106,0.08)",
+                    }}
+                  >
+                    <span>Book a Session</span>
+                    <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
