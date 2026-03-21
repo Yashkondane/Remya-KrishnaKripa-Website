@@ -55,7 +55,7 @@ export default function ConfidentCommunicationPage() {
                       </Button>
                     </Link>
 
-                    <p className="text-sm text-elegant-blue/60">One-on-One Sessions | Online & In-Person</p>
+                    <p className="text-sm text-elegant-blue/60">One-on-One Sessions | Available online</p>
                   </div>
                 </div>
 

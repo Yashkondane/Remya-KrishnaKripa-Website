@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 
 import Footer from "@/components/footer"
 import Navbar from "@/components/navbar"
+import SocialSidebar from "@/components/social-sidebar"
 
 export default function RootLayout({
   children,
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ScrollToTop />
         <Navbar />
+        <SocialSidebar />
         {children}
         <Footer />
       </body>

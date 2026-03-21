@@ -4,9 +4,9 @@ import { Libre_Baskerville } from "next/font/google"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import SimplePreloader from "../../components/simple-preloader"
-import WhatsAppButton from "../../components/whatsapp-button"
-import ScrollReveal from "../../components/scroll-reveal"
+import ScrollReveal from "@/components/scroll-reveal"
+import WhatsAppButton from "@/components/whatsapp-button"
+import SimplePreloader from "@/components/simple-preloader"
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
@@ -16,574 +16,222 @@ const libreBaskerville = Libre_Baskerville({
 })
 
 export default function AboutPage() {
+  const textShadowStyle = { textShadow: "0 0 20px rgba(201, 168, 106, 0.4), 0 0 40px rgba(201, 168, 106, 0.2)" };
+
   return (
     <>
       <SimplePreloader />
-      <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
+      <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className} overflow-x-hidden`}>
+        
+        {/* Floating Background Aesthetics */}
+        <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
+          <div className="absolute top-[10%] -left-[10%] w-[50%] h-[50%] bg-accent-gold/10 rounded-full blur-[140px] animate-pulse-slow" />
+          <div className="absolute bottom-[20%] -right-[10%] w-[40%] h-[40%] bg-elegant-blue/5 rounded-full blur-[140px] animate-float" />
+          <div className="absolute top-[40%] left-[60%] w-[30%] h-[30%] bg-accent-gold/5 rounded-full blur-[100px] animate-pulse-slow" />
+        </div>
 
-        <main className="px-6 md:px-12 py-12 md:py-24">
-          {/* Header Section with Photo */}
-          <ScrollReveal animation="fade">
-            <section className="px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                  {/* Left Column - Text */}
-                  <div className="space-y-8 order-2 lg:order-1">
-                    <p className="text-sm md:text-base text-accent-gold uppercase tracking-wider font-semibold animate-fadeInUp stagger-1">
-                      About
-                    </p>
+        {/* Hero Section */}
+        <section className="relative px-6 md:px-12 py-24 md:py-40 z-10 text-center">
+          <div className="max-w-5xl mx-auto">
+            <ScrollReveal animation="fade">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl leading-tight text-elegant-blue font-bold">
+                Story of a Soul journey from Corporate to the multi-dimensional world of <span className="text-accent-gold" style={textShadowStyle}>Energy Healing and Akashic Records!</span>
+              </h1>
+              <div className="w-24 h-1.5 bg-accent-gold mx-auto mt-12 rounded-full shadow-[0_0_20px_rgba(201,168,106,0.3)]" />
+            </ScrollReveal>
+          </div>
+        </section>
 
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-elegant-blue animate-fadeInUp stagger-2">
-                      Hi, I'm <span className="text-accent-gold text-glow animate-float">Remya</span>
-                    </h1>
-
-                    <p className="text-lg md:text-xl italic text-elegant-blue/80 animate-fadeInUp stagger-3">
-                      "Every soul carries within it the wisdom of ages. My purpose is to help you unlock that sacred
-                      knowledge and step into your highest potential."
-                    </p>
-                  </div>
-
-                  {/* Right Column - Photo */}
-                  <div className="order-1 lg:order-2 animate-scaleIn stagger-2">
-                    <div className="relative max-w-md mx-auto hover-lift">
-                      {/* Rounded Photo Container with 9:16 Aspect Ratio */}
-                      <div className="relative w-full aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl bg-accent-gold/20 backdrop-blur-sm border-4 border-accent-gold/50 transition-all duration-500 hover:border-accent-gold/80">
-                        <Image
-                          src="/images/ChatGPT Image Feb 17, 2026, 08_27_17 PM.png"
-                          alt="Remya - Spiritual Guide"
-                          fill
-                          className="object-cover object-top"
-                          priority
-                        />
-                      </div>
-
-                      {/* Decorative Elements */}
-                      <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent-gold/20 rounded-full blur-xl animate-float stagger-1"></div>
-                      <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-elegant-blue/20 rounded-full blur-2xl animate-float stagger-3"></div>
-                    </div>
+        {/* Corporate & Book Section */}
+        <section className="relative px-6 md:px-12 py-16 md:py-24 z-10">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+              <ScrollReveal animation="slide-left">
+                <div className="relative group">
+                  <div className="absolute -inset-8 rounded-[2rem] bg-accent-gold/10 blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-700" />
+                  <div className="relative hover-lift">
+                    <Image
+                      src="/images/ChatGPT Image Feb 17, 2026, 08_27_17 PM.png"
+                      alt="Remya Krishnakripa"
+                      width={600}
+                      height={800}
+                      className="relative z-10 rounded-2xl shadow-2xl border-2 border-accent-gold/30 w-full max-w-md mx-auto transition-all duration-500 hover:border-accent-gold/60"
+                    />
                   </div>
                 </div>
-              </div>
-            </section>
-          </ScrollReveal>
+              </ScrollReveal>
 
-          {/* Introduction Split Column */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="px-6 md:px-12 py-16 md:py-24 bg-elegant-blue text-warm-beige backdrop-blur-sm">
-              <div className="max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-                  {/* Left Column */}
-                  <div className="space-y-6 animate-slideInLeft">
-                    <h2 className="text-2xl md:text-3xl font-bold text-accent-gold mb-6 animate-fadeInUp stagger-1">
-                      How I Got Here
-                    </h2>
-
-                    <p className="text-lg leading-relaxed mb-6 text-warm-beige/90 animate-fadeInUp stagger-2">
-                      My journey into spiritual guidance began with two powerful questions that changed everything:
-                    </p>
-
-                    <div className="bg-accent-gold/20 p-6 rounded-lg border-l-4 border-accent-gold backdrop-blur-sm hover-lift animate-fadeInUp stagger-3">
-                      <p className="text-lg italic text-accent-gold font-semibold">
-                        "Are you truly connected to your soul's purpose?"
+              <ScrollReveal animation="slide-right" delay={200}>
+                <div className="space-y-10 lg:pl-10">
+                  <div className="space-y-8 bg-white/40 backdrop-blur-md p-8 md:p-12 rounded-[2.5rem] border border-white/50 shadow-xl">
+                    <h2 className="text-3xl md:text-4xl font-bold text-elegant-blue">The Corporate Years & Stagnancy</h2>
+                    <div className="space-y-6">
+                      <p className="text-xl md:text-2xl leading-relaxed text-elegant-blue/90">
+                        Over the years, I worked in IT Agile Leadership and Management areas with multiple MNCs. During my career journey, I faced a strong period of stagnancy—no salary hikes or promotions. It was a literally struggling phase.
                       </p>
-                      <p className="text-lg italic text-accent-gold font-semibold mt-2">
-                        "Do you feel aligned with your spiritual path?"
+                      <p className="text-xl md:text-2xl leading-relaxed text-elegant-blue/90 font-medium italic text-accent-gold">
+                        "From there, I found the way out to my dream successful job roles, doubling my salary every year."
                       </p>
                     </div>
                   </div>
 
-                  {/* Right Column */}
-                  <div className="space-y-6 animate-slideInRight">
-                    <p className="text-lg leading-relaxed text-warm-beige/90 animate-fadeInUp stagger-1">
-                      For years, I navigated the corporate world as an Agile IT Leader in multinational companies,
-                      climbing the ladder of success yet feeling spiritually disconnected. Despite professional
-                      achievements, I experienced a profound sense of stagnancy—a calling from within that couldn't be
-                      ignored.
-                    </p>
+                  <div className="bg-elegant-blue p-10 md:p-12 rounded-[2.5rem] text-warm-beige shadow-2xl relative overflow-hidden group">
+                    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-accent-gold/10 rounded-full blur-[60px] group-hover:scale-150 transition-transform duration-700" />
+                    <div className="relative z-10">
+                      <p className="text-xl md:text-2xl leading-relaxed font-medium italic mb-10">
+                        "Those strategies and secrets have been crafted into a book, and I am now a published author of the best-selling book 'Zero To Hero Career Growth Simplified', available globally through Amazon."
+                      </p>
+                      <a 
+                        href="https://amzn.in/d/7TBBG7U" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-accent-gold text-elegant-blue px-10 py-5 rounded-xl font-bold hover:scale-105 transition-all shadow-[0_0_20px_rgba(201,134,115,0.3)]"
+                      >
+                        Buy on Amazon
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
 
-                    <p className="text-lg leading-relaxed text-warm-beige/90 animate-fadeInUp stagger-2">
-                      This inner restlessness led me to discover my true passion: guiding souls through the sacred wisdom
-                      of the Akashic Records. What began as personal spiritual exploration transformed into a decade-long
-                      journey of helping others unlock their divine blueprint and heal their deepest wounds.
+        {/* Turning Point Section */}
+        <section className="relative px-6 md:px-12 py-24 md:py-36 z-10 overflow-hidden">
+          <div className="max-w-4xl mx-auto">
+            <ScrollReveal animation="fade">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-elegant-blue">The Turning Point</h2>
+                <div className="w-20 h-1.5 bg-accent-gold mt-6 mx-auto rounded-full" />
+              </div>
+            </ScrollReveal>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <ScrollReveal animation="slide-left" delay={200}>
+                <div className="bg-white/60 backdrop-blur-xl p-10 rounded-[2rem] border border-white/60 shadow-lg h-full">
+                  <p className="text-xl md:text-2xl leading-relaxed text-elegant-blue/90">
+                    When I quit my job and started my coaching business, I helped many professionals land their dream careers and salaries within 90 days.
+                  </p>
+                </div>
+              </ScrollReveal>
+              
+              <ScrollReveal animation="slide-right" delay={400}>
+                <div className="bg-elegant-blue p-10 rounded-[2rem] text-warm-beige shadow-2xl h-full border-l-8 border-accent-gold">
+                  <p className="text-xl md:text-2xl leading-relaxed italic font-medium">
+                    While continuing as a mid-career accelerator coach, I entered into a self-healing journey. It was a true turning point. It guided me to my Soul purpose and Soul skills.
+                  </p>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Soul Purpose & Akashic Section */}
+        <section className="relative px-6 md:px-12 py-24 md:py-40 z-10">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <ScrollReveal animation="fade">
+                <div className="space-y-10">
+                  <div className="inline-block px-6 py-2 bg-accent-gold/10 rounded-full border border-accent-gold/20">
+                    <p className="text-sm font-bold text-accent-gold uppercase tracking-[0.2em]">Soul Purpose & Akashic Records</p>
+                  </div>
+                  <div className="space-y-8">
+                    <p className="text-xl md:text-2xl leading-relaxed text-elegant-blue/80">
+                      It opened up the path to 'Akashic'—the multi-dimensional energy world. I moved from my passion business of coaching to my soul purpose: <span className="text-accent-gold font-bold">Energy Healing and Akashic Record Reading.</span>
+                    </p>
+                    <p className="text-xl md:text-2xl leading-relaxed text-elegant-blue/80">
+                      Through the Akashic Records, I am on a mission to help growth-driven individuals break subconscious patterns and gain clarity in career, wealth, and relationships.
                     </p>
                   </div>
                 </div>
+              </ScrollReveal>
+
+              <ScrollReveal animation="scale" delay={300}>
+                <div className="bg-white/40 backdrop-blur-2xl p-10 md:p-16 rounded-[3rem] border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] space-y-10">
+                  <p className="text-xl md:text-2xl leading-relaxed text-elegant-blue/90 italic">
+                    Using Akashic guidance, past-life healing, and inner child work, my clients experience deep, lasting transformation—sometimes within a single session.
+                  </p>
+                  <div className="w-full h-px bg-accent-gold/20" />
+                  <p className="text-xl md:text-2xl leading-relaxed text-elegant-blue font-bold">
+                    I also support high-ambition entrepreneurs with a deep thinking space supported by the Akashic Records, elevating financial targets from lakhs to multiple crores.
+                  </p>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Accomplishments Section */}
+        <section className="relative px-6 md:px-12 py-24 md:py-36 bg-elegant-blue/5 backdrop-blur-md z-10">
+          <div className="max-w-5xl mx-auto">
+            <ScrollReveal animation="fade">
+              <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-elegant-blue flex flex-col items-center gap-4">
+                Accomplishments
+                <span className="w-24 h-1.5 bg-accent-gold rounded-full" />
+              </h2>
+            </ScrollReveal>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <ScrollReveal animation="scale" delay={100}>
+                <div className="group h-full p-10 bg-white/80 rounded-[2.5rem] shadow-xl border-b-8 border-accent-gold hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+                  <h4 className="font-bold text-2xl text-elegant-blue mb-4 tracking-tighter uppercase">IPHM, UK Certified</h4>
+                  <p className="text-lg text-elegant-blue/70">International Practitioners of Holistic Medicine Akashic Record Reader</p>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal animation="scale" delay={200}>
+                <div className="group h-full p-10 bg-white/80 rounded-[2.5rem] shadow-xl border-b-8 border-elegant-blue hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 text-center">
+                  <h4 className="font-bold text-2xl text-elegant-blue mb-4 tracking-tighter uppercase">ICF Certified PCC Coach</h4>
+                  <p className="text-lg text-elegant-blue/70">International Coaching Federation</p>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal animation="fade" delay={300}>
+                <div className="md:col-span-2 p-10 bg-white/40 backdrop-blur-md rounded-[2.5rem] border border-elegant-blue/10 text-center shadow-inner">
+                  <p className="text-xl md:text-2xl text-elegant-blue font-medium tracking-wide">
+                    Lessons absorbed from <span className="text-accent-gold font-bold uppercase">PMP, ITIL, CSM, and ISTQB Advanced</span>.
+                  </p>
+                </div>
+              </ScrollReveal>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        <section className="relative px-6 md:px-12 py-32 md:py-48 z-10 text-center">
+          <div className="max-w-4xl mx-auto space-y-20">
+            <ScrollReveal animation="fade">
+              <div className="relative group">
+                <div className="absolute -inset-10 bg-accent-gold/10 rounded-full blur-[100px] opacity-40 group-hover:opacity-100 transition-opacity" />
+                <i className="relative text-3xl md:text-5xl text-elegant-blue font-medium leading-tight">
+                  "Beyond professional details, I am a travel lover on a dream journey to see the beautiful world. I'm on it already!!"
+                </i>
               </div>
-            </section>
-          </ScrollReveal>
+            </ScrollReveal>
 
-          {/* My Coaching Story */}
-          <ScrollReveal animation="fade" delay={300}>
-            <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-8 text-center animate-fadeInUp">
-                  My Spiritual Journey
-                </h2>
-
+            <ScrollReveal animation="fade" delay={300}>
+              <div className="space-y-16 pt-20 border-t border-accent-gold/20">
+                <p className="text-xl md:text-3xl leading-relaxed text-elegant-blue/90 max-w-3xl mx-auto">
+                  I offer various services on Energy Healing and provide integrated career solutions with strategy + energy. If you have a calling towards Akashic records, inner healing, the ascension journey, or elevating your soul evolution, I would love to support your journey.
+                </p>
                 <div className="space-y-8">
-                  <p className="text-lg leading-relaxed text-elegant-blue animate-fadeInUp stagger-1">
-                    My awakening began during a particularly challenging period in my corporate career. Despite external
-                    success, I felt a profound emptiness—a soul-deep knowing that there was something more meaningful I
-                    was meant to do. This spiritual crisis became my greatest gift.
-                  </p>
-
-                  <div className="bg-elegant-blue/10 p-8 rounded-lg backdrop-blur-sm hover-lift animate-scaleIn stagger-2 border border-accent-gold/30">
-                    <p className="text-xl italic text-accent-gold font-semibold">
-                      "The moment I first accessed the Akashic Records, I knew I had found my calling. The profound wisdom
-                      and healing that flowed through was unlike anything I had ever experienced."
-                    </p>
+                  <div className="space-y-4">
+                    <p className="text-2xl font-bold text-accent-gold italic uppercase tracking-[0.3em]">- with love,</p>
+                    <p className="text-6xl md:text-8xl text-elegant-blue font-bold tracking-tighter">Remya</p>
                   </div>
-
-                  <p className="text-lg leading-relaxed text-elegant-blue animate-fadeInUp stagger-3">
-                    Through years of dedicated study, meditation, and practice, I developed the ability to access the{" "}
-                    <strong className="text-accent-gold">Akashic Records</strong>—the energetic archive of every soul's
-                    journey. This sacred practice revealed not only my own life purpose but also my gift for helping
-                    others navigate their spiritual path.
-                  </p>
-
-                  <p className="text-lg leading-relaxed text-elegant-blue animate-fadeInUp stagger-4">
-                    What started as personal healing evolved into a profound calling to serve others. I discovered that my
-                    corporate background, combined with spiritual wisdom, created a unique approach to{" "}
-                    <strong className="text-accent-gold">soul-level transformation</strong>. Today, I guide individuals
-                    through their own awakening, helping them release karmic patterns, heal soul wounds, and step into
-                    their authentic power.
-                  </p>
-
-                  <p className="text-lg leading-relaxed text-elegant-blue animate-fadeInUp stagger-5">
-                    Each session I facilitate is a sacred space where{" "}
-                    <strong className="text-accent-gold">healing, clarity, and transformation</strong> naturally unfold.
-                    My clients don't just receive guidance—they experience profound shifts that ripple through every
-                    aspect of their lives, empowering them to live from their highest potential.
-                  </p>
+                  <Link href="/contact">
+                    <Button className="bg-accent-gold text-elegant-blue hover:bg-elegant-blue hover:text-warm-beige px-14 py-8 text-2xl font-bold rounded-2xl shadow-[0_0_30px_rgba(201,134,115,0.3)] transition-all duration-500 hover:scale-110">
+                      Connect With Me
+                    </Button>
+                  </Link>
                 </div>
               </div>
-            </section>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
+        </section>
 
-          {/* My Story: From Corporate to Akashic Realms */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-8 text-center animate-fadeInUp">
-                  My Story: From Corporate Boardrooms to Akashic Realms
-                </h2>
-
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed text-elegant-blue animate-fadeInUp stagger-1">
-                    If you met me a few years ago, you would've seen a corporate professional who "had it all." A
-                    high-paying corporate career, leadership roles in IT, and a life that looked successful from the
-                    outside. But inside — I was exhausted. Tired of the stressful career, wanting to help others. My soul
-                    kept whispering… "This isn't it."
-                  </p>
-
-                  <p className="text-lg leading-relaxed text-elegant-blue animate-fadeInUp stagger-2">
-                    No matter how much I achieved, something deeper was missing — clarity, peace, fulfillment. It felt
-                    like I was ticking boxes, but not living my soul purpose. That inner nudge turned into a loud call —
-                    and I knew I couldn't ignore it anymore. So I took a leap of faith… I quit my corporate job, not
-                    knowing where the road would lead — only trusting my inner voice and my mentor.
-                  </p>
-
-                  <div className="bg-accent-gold/20 p-8 rounded-lg backdrop-blur-sm hover-lift animate-fadeInUp stagger-3 border border-accent-gold/30">
-                    <p className="text-lg italic text-accent-gold font-semibold">
-                      "That journey led me to what I now know was my soul's calling. To help others reconnect with
-                      their soul wisdom, heal what's unseen, and rise into their purpose."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* The Turning Point */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="bg-elegant-blue text-warm-beige px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 animate-fadeInUp">
-                  The Turning Point
-                </h3>
-
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed animate-fadeInUp stagger-1">
-                    During my own spiritual awakening, I discovered the Akashic Records — the soul library that holds
-                    every lifetime's memory, lesson, and gift. Through this divine tool, I began to understand the why
-                    behind every struggle, pattern, and relationship. Why certain wounds repeat. Why we meet certain
-                    people. Why our career or wealth feels stuck even when we're trying everything.
-                  </p>
-
-                  <p className="text-lg leading-relaxed animate-fadeInUp stagger-2">
-                    The answers didn't just bring understanding — they brought healing. It was as if my soul handed me a
-                    map that said, "Now that you remember who you are, go help others remember too." And that's exactly
-                    what I've been doing since.
-                  </p>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* My Work Today */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 animate-fadeInUp">
-                  My Work Today
-                </h3>
-
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed text-elegant-blue animate-fadeInUp stagger-1">
-                    Today, I blend spiritual wisdom and energy healing with real-world strategy and emotional intelligence
-                    — guiding founders, professionals, and purpose-driven souls to heal, align, and grow. My sessions and
-                    programs combine:
-                  </p>
-
-                  <ul className="space-y-3 ml-6 animate-fadeInUp stagger-2">
-                    <li className="text-lg text-elegant-blue flex items-start">
-                      <span className="text-accent-gold mr-4 font-bold">•</span>
-                      <span>
-                        <strong className="text-accent-gold">Akashic Record Readings</strong> – to access your soul's
-                        truth and clear karmic patterns
-                      </span>
-                    </li>
-                    <li className="text-lg text-elegant-blue flex items-start">
-                      <span className="text-accent-gold mr-4 font-bold">•</span>
-                      <span>
-                        <strong className="text-accent-gold">Inner Child & Ancestral Healing</strong> – to release
-                        subconscious blockages
-                      </span>
-                    </li>
-                    <li className="text-lg text-elegant-blue flex items-start">
-                      <span className="text-accent-gold mr-4 font-bold">•</span>
-                      <span>
-                        <strong className="text-accent-gold">Relationship Healing</strong> – to bring peace to emotional
-                        connections
-                      </span>
-                    </li>
-                    <li className="text-lg text-elegant-blue flex items-start">
-                      <span className="text-accent-gold mr-4 font-bold">•</span>
-                      <span>
-                        <strong className="text-accent-gold">Twinflame Coaching</strong> - to navigate the intense
-                        awakening journey through eternal soul love
-                      </span>
-                    </li>
-                    <li className="text-lg text-elegant-blue flex items-start">
-                      <span className="text-accent-gold mr-4 font-bold">•</span>
-                      <span>
-                        <strong className="text-accent-gold">Energy Work & Chakra Balancing</strong> – to restore flow in
-                        your system
-                      </span>
-                    </li>
-                    <li className="text-lg text-elegant-blue flex items-start">
-                      <span className="text-accent-gold mr-4 font-bold">•</span>
-                      <span>
-                        <strong className="text-accent-gold">Career & Wealth Coaching</strong> – to create outer success
-                        aligned with your inner truth
-                      </span>
-                    </li>
-                    <li className="text-lg text-elegant-blue flex items-start">
-                      <span className="text-accent-gold mr-4 font-bold">•</span>
-                      <span>
-                        <strong className="text-accent-gold">Confident Communication</strong> - to break your inner
-                        barriers that block confidence
-                      </span>
-                    </li>
-                  </ul>
-
-                  <div className="bg-elegant-blue/10 p-6 rounded-lg mt-6 border-l-4 border-accent-gold animate-fadeInUp stagger-3">
-                    <p className="text-lg text-elegant-blue italic font-semibold">
-                      "I believe healing and growth are not two journeys — they are one. When you heal, you rise. When you
-                      rise, abundance naturally follows."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* What We Offer - Services Cards */}
-          <ScrollReveal animation="fade" delay={400}>
-            <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-6xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-12 text-center animate-fadeInUp">
-                  What We Offer
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Service Card 1 */}
-                  <div className="group bg-white backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-105 border-2 border-elegant-blue/20 hover:border-accent-gold/70 animate-fadeInUp stagger-1">
-                    <h3 className="text-2xl font-bold mb-4 text-accent-gold group-hover:text-accent-gold transition-colors duration-500">
-                      Akashic Records Reading
-                    </h3>
-                    <p className="text-lg leading-relaxed text-elegant-blue group-hover:text-elegant-blue transition-colors duration-500">
-                      Access your soul's eternal records to understand your life purpose, past experiences, and spiritual
-                      contracts. Gain clarity on recurring patterns and unlock your divine blueprint.
-                    </p>
-                  </div>
-
-                  {/* Service Card 2 */}
-                  <div className="group bg-white backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-105 border-2 border-elegant-blue/20 hover:border-accent-gold/70 animate-fadeInUp stagger-2">
-                    <h3 className="text-2xl font-bold mb-4 text-accent-gold group-hover:text-accent-gold transition-colors duration-500">
-                      Soul Healing Sessions
-                    </h3>
-                    <p className="text-lg leading-relaxed text-elegant-blue group-hover:text-elegant-blue transition-colors duration-500">
-                      Deep energetic healing that addresses soul wounds, karmic patterns, and emotional blockages. Release
-                      what no longer serves you and step into your authentic power.
-                    </p>
-                  </div>
-
-                  {/* Service Card 3 */}
-                  <div className="group bg-white backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-105 border-2 border-elegant-blue/20 hover:border-accent-gold/70 animate-fadeInUp stagger-3">
-                    <h3 className="text-2xl font-bold mb-4 text-accent-gold group-hover:text-accent-gold transition-colors duration-500">
-                      Spiritual Mentorship
-                    </h3>
-                    <p className="text-lg leading-relaxed text-elegant-blue group-hover:text-elegant-blue transition-colors duration-500">
-                      Ongoing guidance for your spiritual journey through personalized mentorship. Develop your intuitive
-                      abilities and navigate your awakening with confidence.
-                    </p>
-                  </div>
-
-                  {/* Service Card 4 */}
-                  <div className="group bg-white backdrop-blur-sm p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer hover:scale-105 border-2 border-elegant-blue/20 hover:border-accent-gold/70 animate-fadeInUp stagger-4">
-                    <h3 className="text-2xl font-bold mb-4 text-accent-gold group-hover:text-accent-gold transition-colors duration-500">
-                      Energy Clearing & Protection
-                    </h3>
-                    <p className="text-lg leading-relaxed text-elegant-blue group-hover:text-elegant-blue transition-colors duration-500">
-                      Clear negative energies and psychic debris. Learn powerful protection techniques to maintain your
-                      energetic sovereignty and spiritual clarity.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* Credentials Section */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-8 text-center animate-fadeInUp">
-                  My Credentials
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Spiritual Credentials */}
-                  <div className="space-y-6 animate-slideInLeft">
-                    <h3 className="text-xl font-semibold text-accent-gold mb-4">Spiritual Certifications</h3>
-                    <ul className="space-y-3">
-                      <li className="flex items-center space-x-3 animate-fadeInUp stagger-1">
-                        <div className="w-2 h-2 bg-accent-gold rounded-full animate-pulse-slow"></div>
-                        <span className="text-lg text-white">Certified Akashic Records Reader</span>
-                      </li>
-                      <li className="flex items-center space-x-3 animate-fadeInUp stagger-2">
-                        <div className="w-2 h-2 bg-accent-gold rounded-full animate-pulse-slow"></div>
-                        <span className="text-lg text-white">Energy Healing Practitioner</span>
-                      </li>
-                      <li className="flex items-center space-x-3 animate-fadeInUp stagger-3">
-                        <div className="w-2 h-2 bg-accent-gold rounded-full animate-pulse-slow"></div>
-                        <span className="text-lg text-white">Spiritual Mentorship Certification</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Professional Background */}
-                  <div className="space-y-6 animate-slideInRight">
-                    <h3 className="text-xl font-semibold text-accent-gold mb-4">Professional Background</h3>
-                    <ul className="space-y-3">
-                      <li className="flex items-center space-x-3 animate-fadeInUp stagger-1">
-                        <div className="w-2 h-2 bg-accent-gold rounded-full animate-pulse-slow"></div>
-                        <span className="text-lg text-white">PMP® (Project Management Professional)</span>
-                      </li>
-                      <li className="flex items-center space-x-3 animate-fadeInUp stagger-2">
-                        <div className="w-2 h-2 bg-accent-gold rounded-full animate-pulse-slow"></div>
-                        <span className="text-lg text-white">CSM® (Certified Scrum Master)</span>
-                      </li>
-                      <li className="flex items-center space-x-3 animate-fadeInUp stagger-3">
-                        <div className="w-2 h-2 bg-accent-gold rounded-full animate-pulse-slow"></div>
-                        <span className="text-lg text-white">ITIL & ISTQB Certified</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* Beyond the Coach */}
-          <ScrollReveal animation="scale" delay={300}>
-            <section className="bg-white px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto text-center bg-elegant-blue/5 backdrop-blur-sm rounded-2xl p-8 border border-accent-gold/20 animate-scaleIn">
-                <h2 className="text-3xl md:text-4xl font-bold text-accent-gold mb-8 animate-fadeInUp">
-                  Beyond the Coach
-                </h2>
-
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed text-elegant-blue text-center animate-fadeInUp stagger-1">
-                    I'm grateful to serve high-achievers, celebrities, business owners, and spiritually awakened souls
-                    across the world — helping them:
-                  </p>
-
-                  <div className="bg-elegant-blue/5 p-8 rounded-lg border border-accent-gold/20 animate-fadeInUp stagger-2">
-                    <div className="space-y-2 text-center">
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Heal karmic patterns
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Find peace in relationships
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Align with their purpose
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Activate wealth consciousness
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Step into their next level of freedom and fulfillment
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-accent-gold/20 p-6 rounded-lg border-l-4 border-accent-gold text-center animate-fadeInUp stagger-3">
-                    <p className="text-xl italic text-accent-gold font-semibold">
-                      "Your soul already knows the way. You just need to listen."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* My Philosophy */}
-          <ScrollReveal animation="scale" delay={200}>
-            <section className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 text-center animate-fadeInUp">
-                  My Philosophy
-                </h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-accent-gold/30 animate-fadeInUp stagger-1 hover-lift">
-                    <p className="text-lg text-warm-beige leading-relaxed">
-                      <span className="text-accent-gold font-bold">💫</span> I don't believe in quick fixes. I believe in
-                      real transformation — the kind that touches your heart, rewires your energy, and shifts your entire
-                      reality.
-                    </p>
-                  </div>
-
-                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-accent-gold/30 animate-fadeInUp stagger-2 hover-lift">
-                    <p className="text-lg text-warm-beige leading-relaxed">
-                      <span className="text-accent-gold font-bold">💫</span> I don't predict your future. I help you
-                      co-create it consciously — by aligning with your soul's path.
-                    </p>
-                  </div>
-
-                  <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-accent-gold/30 animate-fadeInUp stagger-3 hover-lift">
-                    <p className="text-lg text-warm-beige leading-relaxed">
-                      <span className="text-accent-gold font-bold">💫</span> I don't just teach manifestation. I help you
-                      heal the blocks that stop you from manifesting.
-                    </p>
-                  </div>
-                </div>
-
-                <p className="text-lg text-warm-beige leading-relaxed text-center mt-8 animate-fadeInUp stagger-4">
-                  Everything I teach and channel comes from experience — from walking through the fire of transformation
-                  myself.
-                </p>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* Today Section */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="beige-bg px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto">
-                <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 text-center animate-fadeInUp">
-                  Today...
-                </h3>
-
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed text-elegant-blue text-center animate-fadeInUp stagger-1">
-                    I'm grateful to serve high-achievers, celebrities, business owners, and spiritually awakened souls
-                    across the world — helping them:
-                  </p>
-
-                  <div className="bg-elegant-blue/5 p-8 rounded-lg border border-accent-gold/20 animate-fadeInUp stagger-2">
-                    <div className="space-y-2 text-center">
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Heal karmic patterns
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Find peace in relationships
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Align with their purpose
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Activate wealth consciousness
-                      </p>
-                      <p className="text-lg text-elegant-blue">
-                        <span className="text-accent-gold">✨</span> Step into their next level of freedom and fulfillment
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="bg-accent-gold/20 p-6 rounded-lg border-l-4 border-accent-gold text-center animate-fadeInUp stagger-3">
-                    <p className="text-xl italic text-accent-gold font-semibold">
-                      "Your soul already knows the way. You just need to listen."
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* Final Message */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto text-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-accent-gold mb-8 animate-fadeInUp">
-                  From My Heart to Yours
-                </h3>
-
-                <div className="space-y-6">
-                  <p className="text-lg leading-relaxed text-warm-beige animate-fadeInUp stagger-1">
-                    Whether you're here for clarity, healing, or expansion — this space is for you. You are not behind.
-                    You are exactly where your soul wants you to be.
-                  </p>
-
-                  <p className="text-lg leading-relaxed text-warm-beige animate-fadeInUp stagger-2">
-                    If something within you is whispering "there's more for me," trust that nudge — it's your soul calling
-                    you home.
-                  </p>
-
-                  <p className="text-lg italic text-accent-gold font-semibold">
-                    Would you like to experience your Akashic Reading? DM me or click below to book your session
-                    today.
-                  </p>
-                </div>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          {/* Final CTA Section */}
-          <ScrollReveal animation="fade" delay={200}>
-            <section className="bg-accent-gold px-6 md:px-12 py-16 md:py-24">
-              <div className="max-w-4xl mx-auto text-center animate-fadeInUp">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-elegant-blue mb-6 font-bold">
-                  Begin Your Journey Within — With Me as Your Guide
-                </h2>
-
-                <p className="text-lg md:text-xl leading-relaxed text-elegant-blue/90 mb-8 max-w-2xl mx-auto">
-                  Discover the guidance and clarity your soul is seeking through a sacred Akashic connection. Each session
-                  is a step toward healing, understanding, and inner alignment.
-                </p>
-
-                <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 btn-hover-effect">
-                  Book Now
-                </Button>
-              </div>
-            </section>
-          </ScrollReveal>
-
-          <WhatsAppButton />
-        </main>
+        <WhatsAppButton />
       </div>
     </>
   )

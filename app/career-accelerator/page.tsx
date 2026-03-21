@@ -62,7 +62,7 @@ export default function CareerAcceleratorPage() {
                       </Button>
                     </Link>
 
-                    <p className="text-sm text-elegant-blue/60">90-Day Transformation | Online & In-Person</p>
+                    <p className="text-sm text-elegant-blue/60">90-Day Transformation | Available online</p>
                   </div>
                 </div>
 

@@ -106,7 +106,7 @@ export default function ContactPage() {
           </ScrollReveal>
 
           {/* Contact Content */}
-          <ScrollReveal animation="slide-up" delay={200}>
+          <ScrollReveal animation="fade" delay={200}>
             <section className="px-6 md:px-12 py-16 md:py-24">
               <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
@@ -271,7 +271,7 @@ export default function ContactPage() {
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold text-elegant-blue mb-1">Sessions</h3>
-                            <p className="text-elegant-blue/80">Online & In-Person Available</p>
+                            <p className="text-elegant-blue/80">Available online</p>
                           </div>
                         </div>
                       </div>
@@ -334,8 +334,7 @@ export default function ContactPage() {
                     <div className="animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
                       <h3 className="text-lg font-semibold text-elegant-blue mb-2">Are sessions available online?</h3>
                       <p className="text-elegant-blue/80">
-                        Yes! We offer both online and in-person sessions. Online sessions are just as effective as
-                        in-person readings.
+                        Online sessions are deeply effective for spiritual guidance and healing.
                       </p>
                     </div>
                   </div>

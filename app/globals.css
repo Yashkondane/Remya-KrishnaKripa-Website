@@ -579,7 +579,6 @@ textarea {
 
 /* Updated beige background utility class - static, no animation */
 .beige-bg {
-  background-image: url("/beige-background.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
