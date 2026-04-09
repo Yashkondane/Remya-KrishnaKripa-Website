@@ -117,16 +117,15 @@ export default function HomePage() {
                   </div>
 
                   <h1 className="text-4xl md:text-5xl lg:text-6xl leading-[1.1] text-elegant-blue animate-fadeInUp stagger-2" style={{ fontFamily: "'Libre Baskerville', Georgia, serif" }}>
-                    Who is{" "}
-                    <span className="relative inline-block">
-                      <span className="text-accent-gold">Remya Krishnakripa</span>
-                    </span>
-                    {" "}and How Can She Unlock Your{" "}
-                    <em style={{ fontStyle: "italic", color: "rgba(52,66,110,0.7)" }}>Highest Potential?</em>
+                    Hello, I’m <span className="text-accent-gold">Remya</span>
                   </h1>
 
-                  <p className="text-base md:text-lg text-elegant-blue/65 leading-relaxed animate-fadeInUp stagger-3 max-w-lg">
-                    A decade of guiding souls through Akashic wisdom, energy healing, and transformative spiritual coaching.
+                  <p className="text-xl md:text-2xl text-elegant-blue/80 font-medium animate-fadeInUp stagger-3 max-w-xl leading-snug">
+                    Are you feeling stuck, repeating the same patterns in your health, money, relationships, or career?
+                  </p>
+
+                  <p className="text-lg md:text-xl text-elegant-blue/65 leading-relaxed animate-fadeInUp stagger-4 max-w-lg">
+                    There’s a deeper reason. I help you understand and break these patterns through Akashic wisdom and deep inner healing.
                   </p>
 
                   {/* Social Media Links */}
