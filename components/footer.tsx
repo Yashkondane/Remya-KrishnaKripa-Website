@@ -1,6 +1,6 @@
 "use client"
 
-import { Facebook, Instagram, Twitter, Dribbble } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
@@ -15,7 +15,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-2">
               <div className="w-20 h-20 flex-shrink-0">
                 <img
-                  src="/images/favicon.ico"
+                  src="/images/download (18).png"
                   alt="Rise with Remya Logo"
                   className="w-full h-full object-contain"
                 />
@@ -25,39 +25,44 @@ export default function Footer() {
                 <span className="text-xs text-white/60 font-medium tracking-wide">Akashic Reader &amp; Energy Healer</span>
               </div>
             </div>
-            <p className="text-base leading-relaxed text-white/90">
-              A dedicated spiritual guide helping souls connect with their divine wisdom through Akashic Records
-              readings, energy healing, and transformative mentorship for over a decade.
-            </p>
+
 
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/coach.remyakrishnakripa/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-accent-gold/10 hover:bg-accent-gold/20 transition-colors duration-200"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5 text-accent-gold" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/remyakrishnakripa/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-accent-gold/10 hover:bg-accent-gold/20 transition-colors duration-200"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5 text-accent-gold" />
               </a>
               <a
-                href="#"
+                href="https://in.linkedin.com/in/remya-krishnakripa"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-accent-gold/10 hover:bg-accent-gold/20 transition-colors duration-200"
-                aria-label="Twitter"
+                aria-label="LinkedIn"
               >
-                <Twitter className="w-5 h-5 text-accent-gold" />
+                <Linkedin className="w-5 h-5 text-accent-gold" />
               </a>
               <a
-                href="#"
+                href="https://www.youtube.com/@remyakrishnakripa"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-accent-gold/10 hover:bg-accent-gold/20 transition-colors duration-200"
-                aria-label="Dribbble"
+                aria-label="YouTube"
               >
-                <Dribbble className="w-5 h-5 text-accent-gold" />
+                <Youtube className="w-5 h-5 text-accent-gold" />
               </a>
             </div>
           </div>
