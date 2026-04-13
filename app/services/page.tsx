@@ -8,7 +8,7 @@ import SimplePreloader from "@/components/simple-preloader"
 import WhatsAppButton from "@/components/whatsapp-button"
 import ScrollReveal from "@/components/scroll-reveal"
 import FAQAccordion from "@/components/faq-accordion"
-import { ArrowRight, Heart, Sparkles, Brain, TrendingUp, Shield } from "lucide-react"
+import { ArrowRight, Heart, Sparkles, Brain, TrendingUp, Shield, BookOpen } from "lucide-react"
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
@@ -50,6 +50,66 @@ const services = [
   },
   {
     id: "04",
+    title: "Career & Wealth Alignment",
+    description:
+      "Understand why your external growth is not matching your potential. Identify deeper blocks and shift them—so your outer reality can change.",
+    image: "/images/image.png",
+    link: "/career-wealth-alignment",
+    icon: TrendingUp,
+    tagline: "Align Your Career and Wealth",
+  },
+  {
+    id: "05",
+    title: "Angel Healing Therapy",
+    description:
+      "A high-frequency energy healing process where we work with angelic energies to support relationships, physical well-being, clarity, and abundance.",
+    image: "/images/image copy.png",
+    link: "/angel-healing-therapy",
+    icon: Sparkles,
+    tagline: "Support Beyond the Logical Mind",
+  },
+  {
+    id: "06",
+    title: "Space Clearance",
+    description:
+      "Clear and reset the energy of your home or office. Release stored emotional and energetic imprints to restore balance, lightness, and flow.",
+    image: "/images/image copy 2.png",
+    link: "/space-clearance",
+    icon: Sparkles,
+    tagline: "Reset Your Environment",
+  },
+  {
+    id: "07",
+    title: "Chakra Healing & Alignment",
+    description:
+      "Restore balance in your energy centres. Clear blockages and overactive states to support emotional stability, clarity, and deep inner connection.",
+    image: "/images/image copy 3.png",
+    link: "/chakra-healing-alignment",
+    icon: Sparkles,
+    tagline: "Realign Your Energy",
+  },
+  {
+    id: "08",
+    title: "Relationship Healing",
+    description:
+      "Understand the deeper patterns and soul-level connections behind your relationships. Heal hidden emotional wounds to create clarity and emotional relief.",
+    image: "/images/image copy 4.png",
+    link: "/relationship-healing",
+    icon: Heart,
+    tagline: "Heal Emotional & Soul Patterns",
+  },
+  {
+    id: "09",
+    title: "Deep Pattern Release & Integrated Healing",
+    description:
+      "A multi-layered healing journey targeting the root cause of repeating patterns. Clear subconscious resistance and integrate deep, lasting change across your life.",
+    image: "/images/image copy 5.png",
+    link: "/deep-pattern-release",
+    icon: Sparkles,
+    tagline: "Break Cycles at the Root",
+  },
+  {
+    id: "10",
     title: "Confident Communication",
     description:
       "Break free from communication blocks rooted in inner child wounds. Learn to speak your truth with confidence, set boundaries, and express yourself authentically in all relationships.",
@@ -59,7 +119,7 @@ const services = [
     tagline: "Speak Your Truth Boldly",
   },
   {
-    id: "05",
+    id: "11",
     title: "Career Accelerator Mentorship",
     description:
       "Transform your career through soul-aligned coaching. Address the 14 inner child patterns that block success and step into leadership with confidence and clarity.",
@@ -67,6 +127,16 @@ const services = [
     link: "/career-accelerator",
     icon: TrendingUp,
     tagline: "Lead with Authenticity",
+  },
+  {
+    id: "12",
+    title: "Become an Energy Healer",
+    description:
+      "Feel called to go deeper? Learn the foundations of energy healing, develop your intuitive abilities, and become a certified healer through guided mentorship and hands-on training.",
+    image: "/images/image copy 6.png",
+    link: "/become-a-healer",
+    icon: BookOpen,
+    tagline: "Step Into Your Purpose",
   },
 ]
 

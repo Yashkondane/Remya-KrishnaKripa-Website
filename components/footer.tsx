@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer className="bg-elegant-blue px-6 md:px-12 py-16 md:py-24 pb-32 md:pb-24">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
           {/* Left Column - About */}
           <div className="space-y-6">
             <div className="flex items-center gap-3 mb-2">
@@ -114,55 +114,77 @@ export default function Footer() {
             <nav className="space-y-3">
               <Link
                 href="/akashic-record-reading"
-                className="block text-base text-white/90 hover:text-accent-gold transition-colors duration-200"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
               >
                 Akashic Records Reading
               </Link>
               <Link
                 href="/past-life-regression"
-                className="block text-base text-white/90 hover:text-accent-gold transition-colors duration-200"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
               >
-                Past Life Regression
+                Past Life Healing & Release
               </Link>
               <Link
                 href="/inner-child-healing"
-                className="block text-base text-white/90 hover:text-accent-gold transition-colors duration-200"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
               >
                 Inner Child Healing
               </Link>
               <Link
+                href="/career-wealth-alignment"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Career & Wealth Alignment
+              </Link>
+              <Link
+                href="/angel-healing-therapy"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Angel Healing Therapy
+              </Link>
+              <Link
+                href="/space-clearance"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Space Clearance
+              </Link>
+              <Link
+                href="/chakra-healing-alignment"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Chakra Healing & Alignment
+              </Link>
+              <Link
+                href="/relationship-healing"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Relationship Healing
+              </Link>
+              <Link
+                href="/deep-pattern-release"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Deep Pattern Release
+              </Link>
+              <Link
                 href="/confident-communication"
-                className="block text-base text-white/90 hover:text-accent-gold transition-colors duration-200"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
               >
                 Confident Communication
               </Link>
               <Link
                 href="/career-accelerator"
-                className="block text-base text-white/90 hover:text-accent-gold transition-colors duration-200"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
               >
                 Career Accelerator
               </Link>
+              <Link
+                href="/become-a-healer"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Become an Energy Healer
+              </Link>
             </nav>
-          </div>
-
-          {/* Right Column - Newsletter */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-accent-gold">Newsletter</h3>
-            <p className="text-base leading-relaxed text-white/90">
-              Stay connected with spiritual insights, guidance, and updates on new offerings. Join our community of
-              souls on the journey within.
-            </p>
-
-            <div className="space-y-4">
-              <Input
-                type="email"
-                placeholder="Enter your email address"
-                className="bg-white/10 border-accent-gold/30 text-white placeholder:text-white/60 focus:border-accent-gold focus:ring-accent-gold"
-              />
-              <Button className="w-full bg-accent-gold text-elegant-blue hover:bg-accent-gold/90 transition-all duration-300 font-semibold">
-                Subscribe
-              </Button>
-            </div>
           </div>
         </div>
 

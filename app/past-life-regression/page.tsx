@@ -1,14 +1,10 @@
 "use client"
 
 import { Libre_Baskerville } from "next/font/google"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import Link from "next/link"
-import Footer from "@/components/footer"
-import SimplePreloader from "@/components/simple-preloader"
-import WhatsAppButton from "@/components/whatsapp-button"
-import ScrollReveal from "@/components/scroll-reveal"
 import React from "react"
+import SimplePreloader from "@/components/simple-preloader"
+import Image from "next/image"
+import { ArrowRight, CheckCircle2 } from "lucide-react"
 
 const libreBaskerville = Libre_Baskerville({
   subsets: ["latin"],
@@ -17,426 +13,251 @@ const libreBaskerville = Libre_Baskerville({
   display: "swap",
 })
 
-const testimonials = [
-  {
-    text: "The past life regression revealed patterns I never understood - it was deeply healing.",
-    name: "Vinod Kumar",
-    country: "USA",
-  },
-  {
-    text: "I finally understood why I had certain fears. The healing was profound.",
-    name: "Priya Khanna",
-    country: "India",
-  },
-  {
-    text: "Discovering my past life connection with my partner brought so much clarity.",
-    name: "Michael Ross",
-    country: "UK",
-  },
-]
-
-const faqs = [
-  {
-    q: "Is PLR safe?",
-    a: "Yes. Remya is visiting the past life and doing the healing. You are always conscious, in control, and guided gently throughout.",
-  },
-  {
-    q: "What if I can't see anything?",
-    a: "You do not have to see. What has been shown to Remya will be shared with you, if you are open to listen.",
-  },
-  {
-    q: "How many sessions do I need?",
-    a: "It will be given by the Akashic book in first session. The root life time will be visited and healed in the same session itself. Further past lives will be visited in a gap of 10 days. Team will assist to book further sessions (separate payment for each session).",
-  },
-  {
-    q: "What is the duration?",
-    a: "Each session lasts 45-60 minutes, depending on your Soul guidance.",
-  },
-]
-
 export default function PastLifeRegressionPage() {
-  const [index, setIndex] = React.useState(0)
-  const [fade, setFade] = React.useState(true)
-  const [openIndex, setOpenIndex] = React.useState<number | null>(null)
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setFade(false)
-      setTimeout(() => {
-        setIndex((prev) => (prev + 1) % testimonials.length)
-        setFade(true)
-      }, 400)
-    }, 4500)
-
-    return () => clearInterval(interval)
-  }, [])
+  const canvaLink = "https://www.canva.com/design/placeholder" // Placeholder
 
   return (
     <>
       <SimplePreloader />
       <div className={`min-h-screen beige-bg text-elegant-blue ${libreBaskerville.className}`}>
-
-
-        {/* Hero Section */}
-        <ScrollReveal animation="fade">
-          <section className="px-6 md:px-12 py-16 md:py-24">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                {/* Left Column - Content */}
-                <div className="space-y-8">
-                  <div className="space-y-6">
-                    <p className="text-lg md:text-xl text-accent-gold animate-fadeInUp">Service 02</p>
-
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-elegant-blue animate-fadeInUp">
-                      Past Life <span className="text-accent-gold text-glow">Regression</span>
-                    </h1>
-
-                    <div className="border-l-4 border-accent-gold pl-6 my-8 animate-fadeInUp">
-                      <p className="text-xl md:text-2xl italic leading-relaxed text-elegant-blue/90">
-                        "Heal the Unseen. Discover the Root of Your Patterns.
-                        <br />
-                        Remember Who You Truly Are."
-                      </p>
-                    </div>
-
-                    <p className="text-lg md:text-xl leading-relaxed text-elegant-blue/80 animate-fadeInUp">
-                      Past Life Regression (PLR) helps you uncover memories and experiences from your previous lifetimes
-                      that shape your current fears, relationships, and soul purpose. When you revisit your past lives,
-                      you unlock deep emotional healing, karmic completion, and soul freedom.
-                    </p>
-                  </div>
-
-                  <div className="space-y-4 animate-fadeInUp">
-                    <Button className="bg-accent-gold text-elegant-blue hover:bg-accent-gold/90 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105 btn-hover-effect">
-                      Book Your PLR Session
-                    </Button>
-
-                    <p className="text-sm text-elegant-blue/60">Energy exchange work • Available online</p>
-                  </div>
-                </div>
-
-                {/* Right Column - Image */}
-                <div className="space-y-6 animate-scaleIn">
-                  <div className="relative hover-lift">
-                    <Image
-                      src="/images/past-20life-20regression.jpeg"
-                      alt="Past Life Regression - Journey through time"
-                      width={500}
-                      height={600}
-                      className="w-full max-w-md mx-auto rounded-lg shadow-2xl object-cover border-2 border-accent-gold/30 transition-all duration-500 hover:border-accent-gold/60"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* Video Section – Client Stories */}
-        <ScrollReveal animation="fade" delay={100}>
-          <section className="px-6 md:px-12 py-16 md:py-24 bg-white/40 backdrop-blur-sm">
-            <div className="max-w-6xl mx-auto">
-              {/* Title */}
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-elegant-blue">
-                  Watch My <span className="text-accent-gold">Client Stories</span>
-                </h2>
-
-                <p className="text-lg text-elegant-blue/70 max-w-2xl mx-auto">
-                  Real experiences shared by clients who explored past-life memories and brought healing into their
-                  present life.
+        
+        <main className="max-w-5xl mx-auto px-6 py-16 md:py-24 space-y-20 text-[18px] leading-relaxed overflow-hidden">
+          
+          {/* Hero Header Area */}
+          <div className="flex flex-col lg:flex-row gap-16 items-center lg:items-start border-b border-elegant-blue/10 pb-16">
+            <div className="lg:w-3/5 space-y-10">
+              <div className="space-y-6 text-center lg:text-left">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-elegant-blue">
+                  Past Life Healing & Release
+                  <div className="h-2 w-32 bg-elegant-blue mt-6 rounded-full mx-auto lg:mx-0"></div>
+                </h1>
+                <p className="text-xl md:text-2xl text-elegant-blue/80 italic">
+                  Some things in your life don't fully make sense… it feels deeper than just this life.
                 </p>
-
-                <div className="h-1 w-24 bg-accent-gold mx-auto mt-6"></div>
               </div>
 
-              {/* Video Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {[
-                  {
-                    label: "Client Experience",
-                    title: "Past Life Regression Story",
-                    src: "https://www.youtube.com/embed/caDdwM8fAiE",
-                  },
-                  {
-                    label: "Client Experience",
-                    title: "Healing & Realisation",
-                    src: "https://www.youtube.com/embed/yO8eKVq2A8w",
-                  },
-                  {
-                    label: "Understanding the Process",
-                    title: "What Is Past Life Regression?",
-                    src: "https://www.youtube.com/embed/g0A2xVfH-EU",
-                  },
-                ].map((video, index) => (
-                  <div
-                    key={index}
-                    className="group bg-white/85 p-4 md:p-5 rounded-2xl
-                              border border-accent-gold/30
-                              transition-all duration-300
-                              hover:border-accent-gold/60
-                              hover:shadow-xl"
-                  >
-                    {/* Label */}
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="h-1 w-8 bg-accent-gold"></div>
-                      <p className="text-sm font-semibold text-elegant-blue/80 uppercase tracking-wide">
-                        {video.label}
-                      </p>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-lg font-semibold text-elegant-blue mb-4">{video.title}</h3>
-
-                    {/* Video */}
-                    <div
-                      className="relative w-full aspect-video rounded-xl overflow-hidden
-                                    shadow-md border border-accent-gold/20
-                                    transition-all duration-300
-                                    group-hover:border-accent-gold/50"
-                    >
-                      <iframe
-                        src={video.src}
-                        title={video.title}
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        className="absolute inset-0 w-full h-full"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* What You'll Experience Section */}
-        <ScrollReveal animation="fade" delay={150}>
-          <section className="px-6 md:px-12 py-16 md:py-24">
-            <div className="max-w-5xl mx-auto">
-              {/* Title */}
-              <div className="text-center mb-14">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-elegant-blue">
-                  What You’ll <span className="text-accent-gold">Experience</span>
-                </h2>
-                <p className="text-lg text-elegant-blue/70 max-w-2xl mx-auto">
-                  A guided session designed to bring understanding, release, and clarity.
-                </p>
-                <div className="h-1 w-24 bg-accent-gold mx-auto mt-6"></div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  "Access one significant past lifetime connected to your current challenges.",
-                  "Understand how unresolved past-life experiences influence your present life.",
-                  "Release emotional or energetic patterns carried forward unconsciously.",
-                  "Gain clarity around relationships, fears, or repeating life situations.",
-                  "Receive intuitive insights that support healing and self-awareness.",
-                  "Integrate past-life wisdom into your current life with grounding and balance.",
-                ].map((text, index) => (
-                  <div
-                    key={index}
-                    className="group bg-white/80 p-6 md:p-8 rounded-xl
-                              border border-accent-gold/30
-                              transition-all duration-300
-                              hover:border-accent-gold/70
-                              hover:shadow-xl hover:-translate-y-1"
-                  >
-                    <div className="flex items-start gap-4">
-                      {/* Number */}
-                      <div
-                        className="flex-shrink-0 w-8 h-8 rounded-full
-                                  border border-accent-gold/60
-                                  text-accent-gold font-semibold
-                                  flex items-center justify-center
-                                  transition-all duration-300
-                                  group-hover:bg-accent-gold
-                                  group-hover:text-elegant-blue"
-                      >
-                        {index + 1}
-                      </div>
-
-                      <p className="text-elegant-blue/80 leading-relaxed">{text}</p>
-                    </div>
-
-                    {/* Hover line */}
-                    <div className="mt-4 h-0.5 w-0 bg-accent-gold transition-all duration-300 group-hover:w-16"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* Who This Is For Section */}
-        <ScrollReveal animation="fade" delay={200}>
-          <section className="px-6 md:px-12 py-16 md:py-24 bg-elegant-blue/5 backdrop-blur-sm">
-            <div className="max-w-5xl mx-auto">
-              {/* Title */}
-              <div className="text-center mb-14">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-elegant-blue">
-                  Who This Is <span className="text-accent-gold">For</span>
-                </h2>
-                <p className="text-lg text-elegant-blue/70 max-w-2xl mx-auto">
-                  This session may support you if any of the following resonate.
-                </p>
-                <div className="h-1 w-24 bg-accent-gold mx-auto mt-6"></div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {[
-                  "You feel stuck in repeating emotional or life patterns despite inner work.",
-                  "You experience fears, heaviness, or emotions without a clear origin.",
-                  "You want clarity around a deep soul connection or unresolved relationship.",
-                  "You feel drawn to explore your soul’s history beyond the present life.",
-                  "You sense unresolved experiences influencing your choices or reactions.",
-                  "You are ready to release karmic weight and move forward with awareness.",
-                ].map((text, index) => (
-                  <div
-                    key={index}
-                    className="group bg-white/80 p-6 md:p-8 rounded-xl
-                              border border-accent-gold/30
-                              transition-all duration-300
-                              hover:border-accent-gold/70
-                              hover:shadow-xl hover:-translate-y-1"
-                  >
-                    <div className="flex items-start gap-4">
-                      {/* Number */}
-                      <div
-                        className="flex-shrink-0 w-8 h-8 rounded-full
-                                  border border-accent-gold/60
-                                  text-accent-gold font-semibold
-                                  flex items-center justify-center
-                                  transition-all duration-300
-                                  group-hover:bg-accent-gold
-                                  group-hover:text-elegant-blue"
-                      >
-                        {index + 1}
-                      </div>
-
-                      <p className="text-elegant-blue/80 leading-relaxed">{text}</p>
-                    </div>
-
-                    {/* Hover line */}
-                    <div className="mt-4 h-0.5 w-0 bg-accent-gold transition-all duration-300 group-hover:w-16"></div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* What Clients Say - Testimonials */}
-        <ScrollReveal animation="fade" delay={250}>
-          <section className="px-6 md:px-12 py-16 md:py-24">
-            <div className="max-w-5xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-elegant-blue">
-                  What Clients <span className="text-accent-gold">Say</span>
-                </h2>
-                <div className="h-1 w-24 bg-accent-gold mx-auto mt-6"></div>
-              </div>
-
-              <div className="bg-elegant-blue p-8 md:p-10 rounded-2xl shadow-xl">
-                <div className={`text-center transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}>
-                  <p className="text-lg md:text-xl text-warm-beige leading-relaxed italic max-w-3xl mx-auto">
-                    "{testimonials[index].text}"
-                  </p>
-                  <p className="text-accent-gold mt-4 font-medium">
-                    — {testimonials[index].name}, {testimonials[index].country}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* FAQ Section */}
-        <ScrollReveal animation="fade" delay={300}>
-          <section className="px-6 md:px-12 py-16 md:py-24 bg-white/40 backdrop-blur-sm">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-14">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight mb-4 text-elegant-blue">
-                  Frequently Asked <span className="text-accent-gold">Questions</span>
-                </h2>
-                <div className="h-1 w-24 bg-accent-gold mx-auto mt-6"></div>
-              </div>
-
-              <div className="space-y-4">
-                {faqs.map((faq, idx) => {
-                  const isOpen = openIndex === idx
-
-                  return (
-                    <div
-                      key={idx}
-                      className="bg-white/85 rounded-xl border border-accent-gold/30
-                                transition-all duration-300
-                                hover:border-accent-gold/50"
-                    >
-                      <button
-                        onClick={() => setOpenIndex(isOpen ? null : idx)}
-                        className="w-full flex items-center justify-between
-                                  p-6 md:p-8 text-left"
-                      >
-                        <h3
-                          className={`text-lg md:text-xl font-semibold transition-colors duration-300 ${isOpen ? "text-accent-gold" : "text-elegant-blue"
-                            }`}
-                        >
-                          {faq.q}
-                        </h3>
-                        <span
-                          className={`ml-4 block w-3 h-3 border-r-2 border-b-2
-                                      transition-transform duration-300
-                                      ${isOpen ? "rotate-45 border-accent-gold" : "-rotate-45 border-elegant-blue/60"}`}
-                        />
-                      </button>
-
-                      <div
-                        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-                          }`}
-                      >
-                        <div className="px-6 md:px-8 pb-6 md:pb-8">
-                          <p className="text-elegant-blue/80 leading-relaxed">{faq.a}</p>
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </section>
-        </ScrollReveal>
-
-        {/* Final CTA Section */}
-        <ScrollReveal animation="scale" delay={350}>
-          <section className="bg-gradient-to-br from-accent-gold via-accent-gold/95 to-accent-gold/90 px-6 md:px-12 py-20 md:py-28">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl leading-tight text-elegant-blue mb-6 font-bold">
-                Unlock Your Soul's Hidden Stories
-              </h2>
-
-              <p className="text-lg md:text-xl leading-relaxed text-elegant-blue/90 mb-8 max-w-2xl mx-auto">
-                When patterns repeat, when fears feel familiar, your Soul is calling you to remember. Release what no
-                longer serves you and step into clarity, healing, and freedom.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button className="bg-elegant-blue text-warm-beige hover:bg-deep-blue px-10 py-5 text-lg font-semibold rounded-lg shadow-xl transition-all duration-300 hover:shadow-2xl hover:scale-105 btn-hover-effect">
-                  Book Your PLR Session Now
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-2 border-elegant-blue text-elegant-blue hover:bg-elegant-blue hover:text-warm-beige px-10 py-5 text-lg font-semibold rounded-lg shadow-lg transition-all duration-300 hover:scale-105 bg-transparent"
+              <div className="flex justify-center lg:justify-start">
+                <button 
+                  onClick={() => window.open(canvaLink, "_blank")}
+                  className="bg-elegant-blue hover:bg-elegant-blue/90 text-warm-beige font-semibold py-4 px-8 rounded-full shadow-xl transition-all duration-300 flex items-center gap-3 text-lg group"
                 >
-                  Message for Guidance
-                </Button>
+                  Book your Session 
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </button>
               </div>
             </div>
+
+            <div className="lg:w-2/5">
+               <Image
+                  src="/images/past-20life-20regression.jpeg"
+                  alt="Past Life Healing"
+                  width={500}
+                  height={600}
+                  className="rounded-2xl shadow-xl object-cover aspect-[4/5] mx-auto border-4 border-white/40"
+                  priority
+                />
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-32">
+            
+            {/* Section 1 */}
+            <section className="space-y-10">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-elegant-blue text-center leading-tight mb-12">
+                Some things in your life don’t fully make sense…
+              </h2>
+              
+              <div className="max-w-2xl mx-auto space-y-8">
+                <div className="grid gap-2 border-l-4 border-elegant-blue/40 pl-6 py-2">
+                  <p>You feel a fear you can’t explain.</p>
+                  <p>You keep attracting the same kind of relationships.</p>
+                  <p>You feel blocked… even when everything looks fine on the outside.</p>
+                </div>
+
+                <p className="font-medium text-xl">You try to move forward— but something within doesn’t let you.</p>
+
+                <div className="py-8 mt-4 text-center space-y-3">
+                  <p className="opacity-80 text-lg">It starts to feel like—</p>
+                  <p className="italic font-bold text-3xl text-elegant-blue">“It feels deeper than just this life.”</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 2 */}
+            <section className="space-y-10">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-elegant-blue text-center leading-tight mb-12">
+                What this is
+              </h2>
+              
+              <div className="space-y-6 text-lg max-w-2xl mx-auto">
+                <p>
+                  Past Life Healing & Release is a process where we access the deeper root of a pattern— which may not always come from your current life.
+                </p>
+
+                <p className="text-2xl font-medium border-l-4 border-elegant-blue pl-6 py-4 my-8">
+                  Instead of you reliving or recalling a past life,<br/>
+                  I access the relevant past life pattern through your records...
+                </p>
+
+                <p>
+                  ...understand what is unresolved, and bring healing to it.
+                </p>
+
+                <p className="font-semibold text-xl">
+                  This includes emotional release, closure, and energetic clearing—
+                </p>
+
+                <div className="bg-elegant-blue text-warm-beige p-8 rounded-2xl shadow-lg mt-8">
+                  <p className="italic text-center text-xl leading-relaxed">
+                    so the pattern no longer holds the same intensity in your present life.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 3 */}
+            <section className="space-y-10">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-elegant-blue text-center leading-tight mb-12">
+                How this shows up in real life
+              </h2>
+              
+              <div className="max-w-2xl mx-auto">
+                <div className="space-y-2 mb-8">
+                  <p className="text-xl">You may experience it like this:</p>
+                </div>
+
+                <div className="py-4 px-4 sm:px-8 max-w-2xl mx-auto">
+                  <ul className="space-y-6 text-xl text-elegant-blue/90">
+                    {[
+                      "A fear or anxiety that has no clear origin",
+                      "Repeating relationship patterns you can’t break",
+                      "Feeling emotionally triggered beyond the situation",
+                      "A sense of heaviness or inner block you can’t explain",
+                      "Difficulty moving forward despite clarity and effort",
+                      "Feeling “stuck” in a way that logic cannot solve"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-4">
+                        <div className="w-2 h-2 rounded-full bg-elegant-blue mt-2.5 flex-shrink-0"></div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="text-center space-y-2 py-10 mt-4 border-b border-elegant-blue/10 pb-16">
+                  <p className="text-2xl font-bold">These patterns often have deeper roots.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 4 */}
+            <section className="space-y-10">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-elegant-blue text-center leading-tight mb-12">
+                What happens in a session
+              </h2>
+              
+              <div className="max-w-3xl mx-auto border-l-4 border-accent-gold pl-6 md:pl-10 space-y-6 text-xl text-elegant-blue/90">
+                <p>
+                  In this session, we focus on what you are currently experiencing— your challenges, emotional patterns, or specific situations.
+                </p>
+                <p>
+                  In your presence (online), I access the relevant past life connected to this pattern and work on healing it at the root. This may include:
+                </p>
+                <ul className="space-y-3 font-semibold pl-4">
+                    <li>• Bringing closure to unresolved experiences</li>
+                    <li>• Releasing emotional imprints</li>
+                    <li>• Cord cutting or energetic disconnection</li>
+                    <li>• Understanding the soul lesson behind the experience</li>
+                </ul>
+                <p className="font-bold pt-4 text-elegant-blue text-2xl">
+                  You don’t have to relive the pain or experience— the process is gentle yet deep and focused on healing the root cause of problems.
+                </p>
+              </div>
+            </section>
+
+            {/* Section 5 */}
+            <section className="space-y-8 bg-elegant-blue text-warm-beige p-10 md:p-14 rounded-[2.5rem] shadow-xl max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-warm-beige text-center leading-tight mb-12">What you may gain</h2>
+              
+              <ul className="space-y-6">
+                {[
+                  "Release from emotional patterns that feel unexplainable",
+                  "Freedom from fears or heaviness you’ve been carrying",
+                  "Clarity on why certain experiences keep repeating",
+                  "A deeper sense of emotional lightness and relief",
+                  "The ability to move forward without the same inner resistance"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-5 text-lg">
+                    <CheckCircle2 className="w-6 h-6 text-accent-gold flex-shrink-0 opacity-100" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          </div>
+        </main>
+        
+        {/* Section 6 Testimonials - Edge to Edge Background */}
+        <section className="relative w-full bg-elegant-blue text-warm-beige py-24 shadow-inner">
+          <div className="max-w-5xl mx-auto px-6 mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center leading-tight">What clients experience</h2>
+            <div className="w-20 h-1 bg-accent-gold mx-auto mt-8"></div>
+          </div>
+          
+          <div className="max-w-4xl mx-auto px-6">
+              <div className="bg-white/5 border border-white/10 p-10 md:p-16 rounded-2xl shadow-lg shadow-black/20">
+                <div className="space-y-4 text-lg md:text-2xl md:leading-relaxed opacity-90 italic">
+                  <p>“I had a pattern of feeling emotionally overwhelmed in situations that didn’t seem that serious. I couldn’t understand why I was reacting that way.</p>
+                  <p>During this session, something deeper was uncovered and healed. It wasn’t something I could have figured out on my own.</p>
+                  <p>After that, I felt noticeably lighter. The same triggers didn’t affect me the way they used to.</p>
+                  <p className="font-semibold border-l-4 border-accent-gold pl-4 md:pl-6 mt-8 md:mt-10">It felt like something had finally been released.”</p>
+                </div>
+                <p className="pt-10 font-bold text-right opacity-90 text-accent-gold text-xl">— N., Business Owner</p>
+              </div>
+          </div>
+        </section>
+
+        <main className="max-w-3xl mx-auto px-6 space-y-32 text-[18px] leading-relaxed pb-32 pt-16">
+          {/* Section 7 Who this is for */}
+          <section className="space-y-8 text-center">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-elegant-blue mb-6 leading-tight">Who this is for</h2>
+            <p className="italic text-xl opacity-90 max-w-md mx-auto">This is for you if:</p>
+
+            <ul className="space-y-5 pt-8 text-left max-w-md mx-auto">
+              {[
+                "You feel something is unresolved at a deeper level",
+                "You experience patterns or emotions that don’t fully make sense",
+                "You’ve tried to work on yourself, but something still remains",
+                "You’re ready to release what you’ve been carrying—at the root"
+              ].map((item, idx) => (
+                <li key={idx} className="flex items-start gap-4">
+                  <div className="w-2 h-2 rounded-full bg-accent-gold mt-2.5 flex-shrink-0"></div>
+                  <span className="text-lg">{item}</span>
+                </li>
+              ))}
+            </ul>
           </section>
-        </ScrollReveal>
+        </main>
+        
+        {/* Final Call to Action - Edge to Edge Golden Background */}
+        <section className="w-full bg-accent-gold text-elegant-blue py-20 md:py-32 text-center px-6">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="space-y-6">
+              <p className="text-2xl md:text-3xl italic opacity-90 font-medium">If you feel there is something deeper influencing your life… and you’re ready to release it—</p>
+              <p className="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight">maybe it’s time to understand what’s happening within.</p>
+            </div>
 
-        <WhatsAppButton />
-
+            <div className="pt-10 flex justify-center">
+              <button 
+                onClick={() => window.open(canvaLink, "_blank")}
+                className="bg-elegant-blue hover:bg-elegant-blue/90 text-warm-beige font-bold py-5 px-10 md:px-14 rounded-full shadow-2xl transition-all duration-300 text-xl md:text-2xl w-full sm:w-auto hover:scale-[1.02]"
+              >
+                Book Your Past Life Healing & Release session
+              </button>
+            </div>
+          </div>
+        </section>
+        
       </div>
     </>
   )

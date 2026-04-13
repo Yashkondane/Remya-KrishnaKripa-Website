@@ -12,12 +12,36 @@ const servicesList = [
         href: "/akashic-record-reading",
     },
     {
-        title: "Past Life Regression",
+        title: "Past Life Healing & Release",
         href: "/past-life-regression",
     },
     {
         title: "Inner Child Healing",
         href: "/inner-child-healing",
+    },
+    {
+        title: "Career & Wealth Alignment",
+        href: "/career-wealth-alignment",
+    },
+    {
+        title: "Angel Healing Therapy",
+        href: "/angel-healing-therapy",
+    },
+    {
+        title: "Space Clearance",
+        href: "/space-clearance",
+    },
+    {
+        title: "Chakra Healing & Alignment",
+        href: "/chakra-healing-alignment",
+    },
+    {
+        title: "Relationship Healing",
+        href: "/relationship-healing",
+    },
+    {
+        title: "Deep Pattern Release",
+        href: "/deep-pattern-release",
     },
     {
         title: "Confident Communication",
@@ -26,6 +50,10 @@ const servicesList = [
     {
         title: "Career Accelerator",
         href: "/career-accelerator",
+    },
+    {
+        title: "Become an Energy Healer",
+        href: "/become-a-healer",
     },
 ]
 
@@ -89,10 +117,10 @@ export default function Navbar() {
 
                         {/* Dropdown Menu */}
                         <div
-                            className={`absolute top-full left-1/2 -translate-x-1/2 w-64 bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border border-elegant-blue/10 p-2 transition-all duration-300 ${isServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
+                            className={`absolute top-full left-1/2 -translate-x-1/2 w-[520px] bg-white/95 backdrop-blur-sm rounded-xl shadow-2xl border border-elegant-blue/10 p-3 transition-all duration-300 ${isServicesOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
                                 }`}
                         >
-                            <div className="grid grid-cols-1 gap-1">
+                            <div className="grid grid-cols-2 gap-1">
                                 {servicesList.map((service) => (
                                     <Link
                                         key={service.title}
