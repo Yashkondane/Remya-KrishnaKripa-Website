@@ -55,6 +55,10 @@ const servicesList = [
         title: "Become an Energy Healer",
         href: "/become-a-healer",
     },
+    {
+        title: "Self-Healing Masterclass",
+        href: "/self-healing-masterclass",
+    },
 ]
 
 export default function Navbar() {

@@ -133,10 +133,20 @@ const services = [
     title: "Become an Energy Healer",
     description:
       "Feel called to go deeper? Learn the foundations of energy healing, develop your intuitive abilities, and become a certified healer through guided mentorship and hands-on training.",
-    image: "/images/image copy 6.png",
+    image: "/images/image copy 5.png",
     link: "/become-a-healer",
     icon: BookOpen,
     tagline: "Step Into Your Purpose",
+  },
+  {
+    id: "13",
+    title: "Self-Healing Masterclass",
+    description:
+      "A focused 2-day masterclass to understand internal patterns, release emotional and energetic blocks, and begin creating stability, clarity, growth, and abundance from within.",
+    image: "/images/image copy 6.png",
+    link: "/self-healing-masterclass",
+    icon: Sparkles,
+    tagline: "Welcome Abundance Through Self-Healing",
   },
 ]
 

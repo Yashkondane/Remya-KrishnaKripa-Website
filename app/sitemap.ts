@@ -23,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/past-life-regression",
     "/relationship-healing",
     "/services",
+    "/self-healing-masterclass",
     "/space-clearance",
     "/stress-anxiety",
     "/video-testimonials",

@@ -184,6 +184,12 @@ export default function Footer() {
               >
                 Become an Energy Healer
               </Link>
+              <Link
+                href="/self-healing-masterclass"
+                className="block text-sm text-white/90 hover:text-accent-gold transition-colors duration-200"
+              >
+                Self-Healing Masterclass
+              </Link>
             </nav>
           </div>
         </div>
